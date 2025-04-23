@@ -7,7 +7,7 @@ const services = [
     id: 'it-services',
     title: 'IT Services',
     description: 'Comprehensive IT solutions tailored to your business needs.',
-    image: '/images/it-services.jpg',
+    image: '/images/services/it/software-dev.jpg',
     icon: '/images/icons/it-icon.svg',
     slug: 'it',
     offerings: [
@@ -47,7 +47,7 @@ const services = [
     id: 'engineering-services',
     title: 'Engineering Services',
     description: 'Innovative engineering solutions for complex challenges.',
-    image: '/images/engineering-services.jpg',
+    image: '/images/carousel/engg-oils.jpg',
     icon: '/images/icons/engineering-icon.svg',
     slug: 'engineering',
     offerings: [

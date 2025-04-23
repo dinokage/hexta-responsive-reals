@@ -36,7 +36,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-80 rounded-lg overflow-hidden">
               <Image
-                src="/images/about-company.jpg"
+                src="/images/about-us/hexta-about-1.webp"
                 alt="HextaSphere team at work"
                 fill
                 className="object-cover"
@@ -128,10 +128,10 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
-                  src="/images/team/ceo.jpg"
+                  src="/images/team/srinivasa-rao-vavilapalli.jpeg"
                   alt="CEO Portrait"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <h3 className="text-xl font-semibold text-dark">Jennifer Chen</h3>
@@ -145,7 +145,7 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
-                  src="/images/team/cto.jpg"
+                  src="/images/team/santosh-kumar-bogela.jpeg"
                   alt="CTO Portrait"
                   fill
                   className="object-cover"
@@ -162,7 +162,7 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
-                  src="/images/team/coo.jpg"
+                  src="/images/team/sudheer.jpeg"
                   alt="COO Portrait"
                   fill
                   className="object-cover"
