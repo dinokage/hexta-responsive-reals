@@ -3,25 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #217496;
+  --dark: #1e1e1e;
+  --light: #ebf3f6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-open-sans), sans-serif;
+  scroll-behavior: smooth;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.prose {
+  @apply text-gray-800;
+}
+
+.prose h2 {
+  @apply text-xl font-semibold text-dark mt-6 mb-4;
+}
+
+.prose h3 {
+  @apply text-lg font-semibold text-dark mt-5 mb-3;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc pl-5 mb-4;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+/* PWA styles */
+@media (display-mode: standalone) {
+  /* Styles specific to when the app is installed as a PWA */
+  body {
+    overscroll-behavior-y: none; /* Prevents the pull-to-refresh action */
   }
 }
