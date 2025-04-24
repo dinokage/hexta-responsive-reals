@@ -36,7 +36,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-80 rounded-lg overflow-hidden">
               <Image
-                src="/images/about-us/hexta-about-1.webp"
+                src="https://res.cloudinary.com/dc8ba4ljm/image/upload/v1745474322/hexta-about-1_wbet88.webp"
                 alt="HextaSphere team at work"
                 fill
                 className="object-cover"
@@ -128,13 +128,13 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
-                  src="/images/team/srinivasa-rao-vavilapalli.jpeg"
+                  src="https://res.cloudinary.com/dc8ba4ljm/image/upload/v1745470429/srinivasa-rao-vavilapalli_soqded.jpg"
                   alt="CEO Portrait"
                   fill
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-dark">Jennifer Chen</h3>
+              <h3 className="text-xl font-semibold text-dark">Srinivasa Rao Vavilapalli</h3>
               <p className="text-primary font-medium mb-2">Chief Executive Officer</p>
               <p className="text-gray-600 text-sm mb-4">
                 With over 20 years of experience in tech leadership, Jennifer drives our strategic vision and growth.
@@ -145,13 +145,13 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
-                  src="/images/team/santosh-kumar-bogela.jpeg"
+                  src="https://res.cloudinary.com/dc8ba4ljm/image/upload/v1745470427/santosh-kumar-bogela_fdvwre.jpg"
                   alt="CTO Portrait"
                   fill
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-dark">Michael Rodriguez</h3>
+              <h3 className="text-xl font-semibold text-dark">Santosh Kumar Bogela</h3>
               <p className="text-primary font-medium mb-2">Chief Technology Officer</p>
               <p className="text-gray-600 text-sm mb-4">
                 Michael leads our technical strategy and innovation initiatives, bringing 15+ years of engineering expertise.
@@ -162,13 +162,13 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
-                  src="/images/team/sudheer.jpeg"
+                  src="https://res.cloudinary.com/dc8ba4ljm/image/upload/v1745470430/sudheer_op5ydh.jpg"
                   alt="COO Portrait"
                   fill
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-dark">Sarah Johnson</h3>
+              <h3 className="text-xl font-semibold text-dark">D Sudheer Babu</h3>
               <p className="text-primary font-medium mb-2">Chief Operations Officer</p>
               <p className="text-gray-600 text-sm mb-4">
                 Sarah ensures operational excellence across all our projects and internal processes.

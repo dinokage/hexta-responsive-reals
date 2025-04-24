@@ -3,7 +3,6 @@ import { Open_Sans } from 'next/font/google'
 import "./globals.css"
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { ScrollProgress } from '@/components/magicui/scroll-progress'
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],
@@ -16,7 +15,9 @@ export const metadata: Metadata = {
   description: 'HextaSphere provides specialized IT and Engineering services including custom software development, blockchain solutions, and IoT systems.',
   manifest: '/manifest.json',
   icons: {
-    apple: '/icons/apple-icon.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
   },
   themeColor: '#217496',
 }
@@ -31,7 +32,6 @@ export default function RootLayout({
       <body className={`${openSans.variable} font-sans`}>
         <Header />
         <main className="min-h-screen">
-        <ScrollProgress className='top-20'/>
           {children}
         </main>
         <Footer />
