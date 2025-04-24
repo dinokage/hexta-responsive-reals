@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google'
 import "./globals.css"
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { ScrollProgress } from '@/components/magicui/scroll-progress'
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={`${openSans.variable} font-sans`}>
         <Header />
         <main className="min-h-screen">
+        <ScrollProgress className='top-20'/>
           {children}
         </main>
         <Footer />

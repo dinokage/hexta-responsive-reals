@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { teamMembers } from '@/lib/team'
 
 export const metadata = {
   title: 'Our Team | HextaSphere',
@@ -6,65 +7,9 @@ export const metadata = {
 }
 
 // Team member data - in a real app, this would likely come from a CMS or API
-const leadershipTeam = [
-  {
-    name: 'Jennifer Chen',
-    role: 'Chief Executive Officer',
-    bio: 'With over 20 years of experience in tech leadership, Jennifer drives our strategic vision and growth. She previously led technology transformation at Fortune 500 companies and holds an MBA from Stanford.',
-    image: '/images/team/ceo.jpg',
-  },
-  {
-    name: 'Michael Rodriguez',
-    role: 'Chief Technology Officer',
-    bio: 'Michael leads our technical strategy and innovation initiatives, bringing 15+ years of engineering expertise. He specializes in distributed systems and AI, and has previously built technology at Google and Spotify.',
-    image: '/images/team/cto.jpg',
-  },
-  {
-    name: 'Sarah Johnson',
-    role: 'Chief Operations Officer',
-    bio: 'Sarah ensures operational excellence across all our projects and internal processes. With a background in management consulting and an extensive track record in scaling technology companies, she keeps HextaSphere running efficiently.',
-    image: '/images/team/coo.jpg',
-  },
-]
+const leadershipTeam = teamMembers.slice(0,3)
 
-const departmentHeads = [
-  {
-    name: 'David Thompson',
-    role: 'Director of Engineering',
-    bio: 'David oversees our engineering teams and technical delivery. His expertise in software architecture and engineering management ensures we deliver high-quality solutions.',
-    image: '/images/team/director-engineering.jpg',
-  },
-  {
-    name: 'Emily Patel',
-    role: 'Head of IT Services',
-    bio: 'Emily leads our IT services division, bringing deep expertise in cloud infrastructure, cybersecurity, and enterprise IT solutions to our client projects.',
-    image: '/images/team/head-it.jpg',
-  },
-  {
-    name: 'Robert Kim',
-    role: 'Head of Product Management',
-    bio: 'Robert guides our product strategy and roadmap development, ensuring our solutions align with market needs and deliver exceptional user experiences.',
-    image: '/images/team/head-product.jpg',
-  },
-  {
-    name: 'Alexandra Martinez',
-    role: 'Head of Client Success',
-    bio: 'Alexandra ensures our clients achieve their business objectives through our technology solutions, leading our client success and account management teams.',
-    image: '/images/team/head-client-success.jpg',
-  },
-  {
-    name: 'James Wilson',
-    role: 'Director of Innovation',
-    bio: 'James leads our innovation lab, exploring emerging technologies and developing experimental solutions that drive the future of our product and service offerings.',
-    image: '/images/team/director-innovation.jpg',
-  },
-  {
-    name: 'Olivia Thompson',
-    role: 'Head of UX/UI Design',
-    bio: 'Olivia leads our design team, ensuring our solutions are not only functional but also intuitive, accessible, and delightful for users across all digital touchpoints.',
-    image: '/images/team/head-design.jpg',
-  },
-]
+const departmentHeads = teamMembers.slice(3)
 
 export default function TeamPage() {
   return (
@@ -97,7 +42,7 @@ export default function TeamPage() {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <div className="p-6">
@@ -129,7 +74,7 @@ export default function TeamPage() {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <div className="p-6 flex-grow">
