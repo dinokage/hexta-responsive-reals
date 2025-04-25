@@ -10,7 +10,7 @@ const jobOpenings = [
   {
     id: 'sr-software-engineer',
     title: 'Senior Software Engineer',
-    department: 'Engineering',
+    department: 'Development',
     location: 'San Francisco, CA (Hybrid)',
     type: 'Full-time',
     description: 'We are looking for a Senior Software Engineer to join our engineering team. In this role, you will design, develop, and maintain software solutions for our clients.',
