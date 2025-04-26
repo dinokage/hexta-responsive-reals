@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google'
 import "./globals.css"
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { ThemeProvider } from "@/components/theme-provider";
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],
@@ -30,11 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.variable} font-sans`}>
+      <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
         <Header />
         <main className="min-h-screen">
           {children}
         </main>
         <Footer />
+      </ThemeProvider>
       </body>
     </html>
   )
