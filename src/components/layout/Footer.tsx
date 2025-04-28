@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Twitter, Linkedin, Facebook } from 'lucide-react'
+import ThemeSwitch from "@/components/ThemeSwitch"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -22,6 +23,9 @@ export default function Footer() {
             <p className="text-dark text-sm max-w-xs">
               Providing innovative IT and Engineering solutions for businesses worldwide.
             </p>
+            <div className="flex space-x-6 mt-2">
+            <ThemeSwitch/>
+            </div>
           </div>
           
           {/* Quick Links */}

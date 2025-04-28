@@ -4,6 +4,7 @@ import "./globals.css"
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { ThemeProvider } from "@/components/theme-provider";
+import NextTopLoader from "nextjs-toploader";
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],
@@ -20,7 +21,6 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/apple-icon.png',
   },
-  themeColor: '#217496',
 }
 
 export default function RootLayout({
@@ -32,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${openSans.variable} font-sans`}>
       <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
+      <NextTopLoader color="#007BFF" />
         <Header />
         <main className="min-h-screen">
           {children}
