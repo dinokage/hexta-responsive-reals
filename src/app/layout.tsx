@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google'
 import "./globals.css"
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { HeroUIProvider } from "@heroui/react";
 import { ThemeProvider } from "@/components/theme-provider";
 import NextTopLoader from "nextjs-toploader";
 
@@ -31,7 +32,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.variable} font-sans`}>
-      <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
+        <HeroUIProvider>
+      <ThemeProvider attribute="class">
       <NextTopLoader color="#007BFF" />
         <Header />
         <main className="min-h-screen">
@@ -39,6 +41,7 @@ export default function RootLayout({
         </main>
         <Footer />
       </ThemeProvider>
+      </HeroUIProvider>
       </body>
     </html>
   )

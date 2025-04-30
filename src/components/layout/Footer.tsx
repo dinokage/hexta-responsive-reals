@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Twitter, Linkedin, Facebook } from 'lucide-react'
 import ThemeSwitch from "@/components/ThemeSwitch"
+import HextaLoGu from './Logo'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -13,12 +14,7 @@ export default function Footer() {
           {/* Logo and Info */}
           <div className="mb-8 md:mb-0">
             <div className="h-14 w-32 relative mb-4">
-              <Image
-                src="/images/logo.png"
-                alt="HextaSphere Logo"
-                fill
-                className="object-contain"
-              />
+              <HextaLoGu />
             </div>
             <p className="text-dark text-sm max-w-xs">
               Providing innovative IT and Engineering solutions for businesses worldwide.

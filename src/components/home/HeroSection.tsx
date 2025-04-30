@@ -7,7 +7,7 @@ export default function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-bg.png"
+          src="/images/carousel/blockchain.jpg"
           alt="Technology background"
           fill
           className="object-cover"

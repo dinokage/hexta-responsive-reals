@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1568.35 587.51">
+  <defs>
+    <style>
+      .ah {
+        fill: #ffbf00;
+      }
+
+      .ah, .ai, .aj, .ak, .al {
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+
+      .ai {
+        fill: red;
+      }
+
+      .aj {
+        fill: lime;
+      }
+
+      .am {
+        fill: none;
+        stroke: #069;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: .71px;
+      }
+
+      .ak, .an {
+        fill: #069;
+      }
+
+      .al {
+        fill: #2586da;
+      }
+
+      .an {
+        font-size: 177.22px;
+      }
+
+      .an, .ao {
+        font-family: ArialMT, Arial;
+      }
+
+      .ao {
+        font-size: 110.76px;
+      }
+
+      .ap {
+        letter-spacing: -.11em;
+      }
+
+      .aq {
+        letter-spacing: -.07em;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="HATCH">
+    <polygon class="ak" points="428.93 52.76 222.77 171.79 222.77 230.31 222.77 365.21 222.77 409.85 428.93 528.88 635.1 409.85 635.1 385.42 621.77 385.42 621.77 402.15 428.93 513.48 236.1 402.15 236.1 353.18 236.1 242.34 236.1 179.48 428.93 68.15 621.77 179.48 621.77 196.74 635.1 196.74 635.1 171.79 428.93 52.76"/>
+  </g>
+  <g id="c" data-name="LWPOLYLINE">
+    <polyline class="am" points="621.77 196.74 621.77 179.48 428.93 68.15 236.1 179.48 236.1 242.34"/>
+  </g>
+  <g id="d" data-name="LWPOLYLINE">
+    <polyline class="am" points="635.1 196.74 635.1 171.79 428.93 52.76 222.77 171.79 222.77 230.31"/>
+  </g>
+  <g id="e" data-name="LWPOLYLINE">
+    <polyline class="am" points="236.1 353.18 236.1 402.15 428.93 513.48 621.77 402.15 621.77 385.42"/>
+  </g>
+  <g id="f" data-name="LWPOLYLINE">
+    <polyline class="am" points="222.77 365.21 222.77 409.85 428.93 528.88 635.1 409.85 635.1 385.42"/>
+  </g>
+  <g id="g" data-name="MTEXT">
+    <text class="an" transform="translate(261.9 355.73)"><tspan x="0" y="0">HEX</tspan><tspan class="aq" x="364.38" y="0">T</tspan><tspan x="459.48" y="0">ASPHERE</tspan></text>
+  </g>
+  <g id="h" data-name="LINE">
+    <line class="am" x1="621.77" y1="196.74" x2="635.1" y2="196.74"/>
+  </g>
+  <g id="i" data-name="LINE">
+    <line class="am" x1="621.77" y1="385.42" x2="635.1" y2="385.42"/>
+  </g>
+  <g id="j" data-name="MTEXT">
+    <text class="ao" transform="translate(907.21 459.34)"><tspan class="ap" x="0" y="0">T</tspan><tspan x="55.38" y="0">echnologies</tspan></text>
+  </g>
+  <g id="k" data-name="ARC">
+    <path class="am" d="M236.1,242.34c-30.61,0-55.42,24.81-55.42,55.42s24.81,55.42,55.42,55.42"/>
+  </g>
+  <g id="l" data-name="ARC">
+    <path class="am" d="M222.77,230.31c-37.25,7.36-61.48,43.53-54.11,80.78,5.4,27.34,26.78,48.71,54.11,54.11"/>
+  </g>
+  <g id="m" data-name="HATCH">
+    <path class="ak" d="M227.27,123.52l53.33-30.79V31.15L227.27.35l-53.33,30.79v61.58l53.33,30.79M178.65,90.01v-56.15l48.63-28.07,48.63,28.07v56.15l-48.63,28.07-48.63-28.07Z"/>
+  </g>
+  <g id="n" data-name="HATCH">
+    <polygon class="ai" points="275.9 90.01 275.9 33.86 227.27 5.79 178.65 33.86 178.65 90.01 227.27 118.09 275.9 90.01"/>
+  </g>
+  <g id="o" data-name="LWPOLYLINE">
+    <polygon class="am" points="275.9 33.86 227.27 5.79 178.65 33.86 178.65 90.01 227.27 118.09 275.9 90.01 275.9 33.86"/>
+  </g>
+  <g id="p" data-name="HATCH">
+    <polygon class="ak" points="103.42 166.03 107.02 168.11 107.02 170.2 193.99 155.69 200.61 108.12 196.21 105.58 189.81 151.62 103.42 166.03"/>
+  </g>
+  <g id="q" data-name="LWPOLYLINE">
+    <polygon class="am" points="280.61 31.15 227.27 .35 173.94 31.15 173.94 92.73 227.27 123.52 280.61 92.73 280.61 31.15"/>
+  </g>
+  <g id="r" data-name="HATCH">
+    <path class="ak" d="M53.69,260.48l53.33-30.79v-61.58l-53.33-30.79L.35,168.11v61.58l53.33,30.79M5.06,226.97v-56.15l48.63-28.07,48.63,28.07v56.15l-48.63,28.07-48.63-28.07Z"/>
+  </g>
+  <g id="s" data-name="HATCH">
+    <polygon class="aj" points="5.06 170.83 5.06 226.97 53.69 255.05 102.31 226.97 102.31 170.83 53.69 142.75 5.06 170.83"/>
+  </g>
+  <g id="t" data-name="LWPOLYLINE">
+    <polygon class="am" points="102.31 170.83 53.69 142.75 5.06 170.83 5.06 226.97 53.69 255.05 102.31 226.97 102.31 170.83"/>
+  </g>
+  <g id="u" data-name="LWPOLYLINE">
+    <polygon class="am" points="107.02 168.11 53.69 137.32 .35 168.11 .35 229.69 53.69 260.48 107.02 229.69 107.02 168.11"/>
+  </g>
+  <g id="v" data-name="HATCH">
+    <path class="ak" d="M53.69,431.69l53.33-30.79v-61.58l-53.33-30.79L.35,339.32v61.58l53.33,30.79M5.06,398.18v-56.15l48.63-28.07,48.63,28.07v56.15l-48.63,28.07-48.63-28.07Z"/>
+  </g>
+  <g id="w" data-name="HATCH">
+    <polygon class="al" points="53.69 426.26 102.31 398.18 102.31 342.03 53.69 313.96 5.06 342.03 5.06 398.18 53.69 426.26"/>
+  </g>
+  <g id="x" data-name="LWPOLYLINE">
+    <polygon class="am" points="102.31 342.03 53.69 313.96 5.06 342.03 5.06 398.18 53.69 426.26 102.31 398.18 102.31 342.03"/>
+  </g>
+  <g id="y" data-name="LWPOLYLINE">
+    <polygon class="am" points="107.02 339.32 53.69 308.52 .35 339.32 .35 400.9 53.69 431.69 107.02 400.9 107.02 339.32"/>
+  </g>
+  <g id="z" data-name="HATCH">
+    <path class="ak" d="M227.27,587.16l53.33-30.79v-61.58l-53.33-30.79-53.33,30.79v61.58l53.33,30.79M178.65,553.65v-56.15l48.63-28.07,48.63,28.07v56.15l-48.63,28.07-48.63-28.07Z"/>
+  </g>
+  <g id="aa" data-name="HATCH">
+    <polygon class="ah" points="227.27 581.73 275.9 553.65 275.9 497.5 227.27 469.43 178.65 497.5 178.65 553.65 227.27 581.73"/>
+  </g>
+  <g id="ab" data-name="LWPOLYLINE">
+    <polygon class="am" points="275.9 497.5 227.27 469.43 178.65 497.5 178.65 553.65 227.27 581.73 275.9 553.65 275.9 497.5"/>
+  </g>
+  <g id="ac" data-name="LWPOLYLINE">
+    <polygon class="am" points="280.61 494.79 227.27 464 173.94 494.79 173.94 556.37 227.27 587.16 280.61 556.37 280.61 494.79"/>
+  </g>
+  <g id="ad" data-name="LINE">
+    <line class="am" x1="107.02" y1="170.2" x2="193.99" y2="155.69"/>
+  </g>
+  <g id="ae" data-name="LINE">
+    <line class="am" x1="100.61" y1="166.5" x2="189.81" y2="151.62"/>
+  </g>
+  <g id="af" data-name="LINE">
+    <line class="am" x1="193.99" y1="155.69" x2="200.61" y2="108.12"/>
+  </g>
+  <g id="ag" data-name="LINE">
+    <line class="am" x1="189.81" y1="151.62" x2="196.21" y2="105.58"/>
+  </g>
+</svg>

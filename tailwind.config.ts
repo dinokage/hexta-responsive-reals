@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import tailwindcssAnimate from "tailwindcss-animate";
+import { heroui } from "@heroui/theme";
 
 const config: Config = {
     darkMode: ['class'],
@@ -7,16 +8,17 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+	"./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
   	extend: {
   		colors: {
   			primary: {
-  				DEFAULT: '#217496', // Changed to direct hex value
+  				DEFAULT: 'var(--primary)', // Use CSS variable
   				foreground: 'hsl(var(--primary-foreground))'
   			},
-  			dark: '#1e1e1e',
-  			light: '#ebf3f6',
+  			dark: 'var(--dark)',
+  			light: 'var(--light)',
   			white: '#ffffff',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -68,7 +70,6 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [heroui(), tailwindcssAnimate],
 }
-
 export default config

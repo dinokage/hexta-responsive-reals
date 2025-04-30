@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
+import ThemeSwitch from '@/components/ThemeSwitch'
+import HextaLoGu from './Logo'
 
 const menuItems = [
   { name: 'Home', path: '/' },
@@ -31,52 +33,51 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'
+      scrolled ? 'bg-background shadow-md py-2' : 'bg-background py-4'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <div className="h-14 w-32 relative">
-              <Image
-                src="/images/logo.png"
-                alt="HextaSphere Logo"
-                fill
-                className="object-contain"
-                priority
-              />
+              <HextaLoGu />
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                className={`text-sm font-semibold transition-colors ${
-                  pathname === item.path
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-dark hover:text-primary'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center gap-4">
+            <nav className="flex items-center space-x-8">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  className={`text-sm font-semibold transition-colors ${
+                    pathname === item.path
+                      ? 'text-primary border-b-2 border-primary'
+                      : 'text-foreground hover:text-primary'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-dark"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeSwitch />
+            <button
+              className="text-foreground"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden pt-4 pb-6 border-t mt-4">
+          <nav className="md:hidden pt-4 pb-6 border-t mt-4 border-border">
             <ul className="flex flex-col space-y-4">
               {menuItems.map((item) => (
                 <li key={item.name}>
@@ -85,7 +86,7 @@ export default function Header() {
                     className={`block text-sm font-semibold ${
                       pathname === item.path
                         ? 'text-primary'
-                        : 'text-dark hover:text-primary'
+                        : 'text-foreground hover:text-primary'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
