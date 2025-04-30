@@ -22,7 +22,7 @@ export default function Footer() {
             <p className="text-dark text-sm max-w-xs">
               Providing innovative IT and Engineering solutions for businesses worldwide.
             </p>
-            <div className="flex space-x-6 mt-2">
+            <div className="flex space-x-6 mt-3">
             <ThemeSwitch/>
             </div>
           </div>
