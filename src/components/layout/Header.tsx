@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-// import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import ThemeSwitch from '@/components/ThemeSwitch'
-import HextaLoGu from './Logo'
+import HextaLogo from './Logo'
 
 const menuItems = [
   { name: 'Home', path: '/' },
@@ -39,7 +38,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <div className="h-14 w-32 relative">
-              <HextaLoGu />
+              <HextaLogo />
             </div>
           </Link>
 
