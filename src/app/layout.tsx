@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
-import "./globals.css"
+import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { HeroUIProvider } from "@heroui/react";
-import { ThemeProvider } from "@/components/theme-provider";
-import NextTopLoader from "nextjs-toploader";
+import { HeroUIProvider } from "@heroui/react"
+import { ThemeProvider } from '@/components/theme-provider'
+import NextTopLoader from 'nextjs-toploader'
+import { PostHogProvider } from '@/components/PostHogProvider'
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],
@@ -32,16 +33,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.variable} font-sans`}>
-        <HeroUIProvider>
-      <ThemeProvider attribute="class">
-      <NextTopLoader color="#007BFF" />
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-      </ThemeProvider>
-      </HeroUIProvider>
+        <PostHogProvider>
+          <HeroUIProvider>
+            <ThemeProvider attribute="class">
+              <NextTopLoader color="#007BFF" />
+              <Header />
+              <main className="min-h-screen">
+                {children}
+              </main>
+              <Footer />
+            </ThemeProvider>
+          </HeroUIProvider>
+        </PostHogProvider>
       </body>
     </html>
   )
