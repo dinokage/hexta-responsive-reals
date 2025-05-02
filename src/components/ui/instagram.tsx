@@ -37,49 +37,8 @@ const rectVariants: Variants = {
   },
 };
 
-const pathVariants: Variants = {
-  normal: {
-    opacity: 1,
-    pathLength: 1,
-    pathOffset: 0,
-    transition: {
-      duration: 0.4,
-      opacity: { duration: 0.1 },
-    },
-  },
-  animate: {
-    opacity: [0, 1],
-    pathLength: [0, 1],
-    pathOffset: [1, 0],
-    transition: {
-      duration: 0.6,
-      ease: 'linear',
-      opacity: { duration: 0.1 },
-    },
-  },
-};
-
-const lineVariants: Variants = {
-  normal: {
-    opacity: 1,
-    pathLength: 1,
-    pathOffset: 0,
-    transition: {
-      duration: 0.4,
-      opacity: { duration: 0.1 },
-    },
-  },
-  animate: {
-    opacity: [0, 1],
-    pathLength: [0, 1],
-    pathOffset: [1, 0],
-    transition: {
-      duration: 0.6,
-      ease: 'linear',
-      opacity: { duration: 0.1 },
-    },
-  },
-};
+const pathVariants = rectVariants;
+const lineVariants = rectVariants;
 
 const InstagramIcon = forwardRef<InstagramIconHandle, InstagramIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
@@ -134,7 +93,7 @@ const InstagramIcon = forwardRef<InstagramIconHandle, InstagramIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          `cursor-pointer select-none p-2 rounded-md transition-colors duration-200 flex items-center justify-center`,
           className
         )}
         onMouseEnter={handleMouseEnter}
@@ -147,11 +106,19 @@ const InstagramIcon = forwardRef<InstagramIconHandle, InstagramIconProps>(
           height={size}
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="url(#instaGradient)"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
+          <defs>
+            <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f58529" />
+              <stop offset="30%" stopColor="#dd2a7b" />
+              <stop offset="70%" stopColor="#8134af" />
+              <stop offset="100%" stopColor="#515bd4" />
+            </linearGradient>
+          </defs>
           <motion.rect
             variants={rectVariants}
             initial="normal"

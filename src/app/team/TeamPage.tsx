@@ -1,12 +1,7 @@
-// First, we need to install NextUI
-// Run this in your terminal:
-// npm install @nextui-org/react framer-motion
-
-// src/app/team/page.tsx
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import BlurImage from '@/components/blur-image'
 import { teamMembers } from '@/lib/team'
 import { Skeleton } from "@heroui/react"
 
@@ -60,7 +55,7 @@ export default function TeamPage() {
                   <Skeleton className="rounded-full w-48 h-48 mb-4" />
                 ) : (
                   <div className="relative w-48 h-48 mb-4 rounded-full overflow-hidden">
-                    <Image
+                    <BlurImage
                       src={member.image}
                       alt={member.name}
                       fill
@@ -109,7 +104,7 @@ export default function TeamPage() {
                   <Skeleton className="rounded-full w-32 h-32 mb-4" />
                 ) : (
                   <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden">
-                    <Image
+                    <BlurImage
                       src={member.image}
                       alt={member.name}
                       fill
@@ -188,7 +183,7 @@ export default function TeamPage() {
               ) : (
                 <>
                   <div className="relative h-64 rounded-lg overflow-hidden">
-                    <Image
+                    <BlurImage
                       src="/images/team/culture-1.jpg"
                       alt="Team collaboration"
                       fill
@@ -196,7 +191,7 @@ export default function TeamPage() {
                     />
                   </div>
                   <div className="relative h-64 rounded-lg overflow-hidden">
-                    <Image
+                    <BlurImage
                       src="/images/team/culture-2.jpg"
                       alt="Office environment"
                       fill
@@ -204,7 +199,7 @@ export default function TeamPage() {
                     />
                   </div>
                   <div className="relative h-64 rounded-lg overflow-hidden">
-                    <Image
+                    <BlurImage
                       src="/images/team/culture-3.jpg"
                       alt="Team event"
                       fill
@@ -212,7 +207,7 @@ export default function TeamPage() {
                     />
                   </div>
                   <div className="relative h-64 rounded-lg overflow-hidden">
-                    <Image
+                    <BlurImage
                       src="/images/team/culture-4.jpg"
                       alt="Working together"
                       fill

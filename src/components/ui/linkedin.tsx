@@ -15,51 +15,7 @@ interface LinkedinIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
-  normal: {
-    opacity: 1,
-    pathLength: 1,
-    pathOffset: 0,
-    transition: {
-      duration: 0.4,
-      opacity: { duration: 0.1 },
-    },
-  },
-  animate: {
-    opacity: [0, 1],
-    pathLength: [0, 1],
-    pathOffset: [1, 0],
-    transition: {
-      duration: 0.6,
-      ease: 'linear',
-      opacity: { duration: 0.1 },
-    },
-  },
-};
-
-const rectVariants: Variants = {
-  normal: {
-    opacity: 1,
-    pathLength: 1,
-    pathOffset: 0,
-    transition: {
-      duration: 0.4,
-      opacity: { duration: 0.1 },
-    },
-  },
-  animate: {
-    opacity: [0, 1],
-    pathLength: [0, 1],
-    pathOffset: [1, 0],
-    transition: {
-      duration: 0.6,
-      ease: 'linear',
-      opacity: { duration: 0.1 },
-    },
-  },
-};
-
-const circleVariants: Variants = {
+const sharedVariants: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -86,12 +42,10 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
     const pathControls = useAnimation();
     const rectControls = useAnimation();
     const circleControls = useAnimation();
-
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => {
           pathControls.start('animate');
@@ -135,7 +89,7 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          `cursor-pointer p-2 rounded-md transition-colors duration-200 flex items-center justify-center`,
           className
         )}
         onMouseEnter={handleMouseEnter}
@@ -147,20 +101,26 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
           width={size}
           height={size}
           fill="none"
-          stroke="currentColor"
+          stroke="url(#linkedinGradient)"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
           viewBox="0 0 24 24"
         >
+          <defs>
+            <linearGradient id="linkedinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0077B5" />
+              <stop offset="100%" stopColor="#00A0DC" />
+            </linearGradient>
+          </defs>
           <motion.path
-            variants={pathVariants}
+            variants={sharedVariants}
             initial="normal"
             animate={pathControls}
             d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
           />
           <motion.rect
-            variants={rectVariants}
+            variants={sharedVariants}
             initial="normal"
             animate={rectControls}
             x="2"
@@ -169,7 +129,7 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
             height="12"
           />
           <motion.circle
-            variants={circleVariants}
+            variants={sharedVariants}
             initial="normal"
             animate={circleControls}
             cx="4"

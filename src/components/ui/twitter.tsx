@@ -44,7 +44,6 @@ const TwitterIcon = forwardRef<TwitterIconHandle, TwitterIconProps>(
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -76,7 +75,7 @@ const TwitterIcon = forwardRef<TwitterIconHandle, TwitterIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          `cursor-pointer select-none p-2 rounded-md transition-colors duration-200 flex items-center justify-center`,
           className
         )}
         onMouseEnter={handleMouseEnter}
@@ -89,11 +88,17 @@ const TwitterIcon = forwardRef<TwitterIconHandle, TwitterIconProps>(
           height={size}
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="url(#twitterGradient)"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
+          <defs>
+            <linearGradient id="twitterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#1DA1F2" />
+              <stop offset="100%" stopColor="#0D8EDC" />
+            </linearGradient>
+          </defs>
           <motion.path
             d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
             variants={pathVariants}
