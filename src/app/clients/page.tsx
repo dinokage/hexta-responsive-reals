@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import BlurImage from '@/components/blur-image'
+import { getClientImageUrl } from '@/lib/minio'
 
 export const metadata = {
   title: 'Our Clients | HextaSphere',
@@ -10,46 +11,46 @@ const clientCategories = [
   {
     name: 'Energy & Oil',
     clients: [
-      { name: 'GAIL', logo: '/images/clients/energy/client1.png' },
-      { name: 'PetroTech', logo: '/images/clients/energy/client2.png' },
-      { name: 'EnergySolutions', logo: '/images/clients/energy/client3.png' },
-      { name: 'GreenPower', logo: '/images/clients/energy/client4.png' },
+      { name: 'GAIL', logo: getClientImageUrl('gail.jpeg') },
+      { name: 'PetroTech', logo: getClientImageUrl('client-temp.png') },
+      { name: 'EnergySolutions', logo: getClientImageUrl('client-temp.png') },
+      { name: 'GreenPower', logo: getClientImageUrl('client-temp.png') },
     ]
   },
   {
     name: 'Financial Services',
     clients: [
-      { name: 'GlobalBank', logo: '/images/clients/finance/client1.png' },
-      { name: 'InvestCorp', logo: '/images/clients/finance/client2.png' },
-      { name: 'FinTrust', logo: '/images/clients/finance/client3.png' },
-      { name: 'SecureFinance', logo: '/images/clients/finance/client4.png' },
+      { name: 'GlobalBank', logo: getClientImageUrl('client-temp.png') },
+      { name: 'InvestCorp', logo: getClientImageUrl('client-temp.png') },
+      { name: 'FinTrust', logo: getClientImageUrl('client-temp.png') },
+      { name: 'SecureFinance', logo: getClientImageUrl('client-temp.png') },
     ]
   },
   {
     name: 'Healthcare & Pharmaceuticals',
     clients: [
-      { name: 'MediCare', logo: '/images/clients/healthcare/client1.png' },
-      { name: 'PharmaTech', logo: '/images/clients/healthcare/client2.png' },
-      { name: 'HealthInnovate', logo: '/images/clients/healthcare/client3.png' },
-      { name: 'MedicalSolutions', logo: '/images/clients/healthcare/client4.png' },
+      { name: 'MediCare', logo: getClientImageUrl('client-temp.png') },
+      { name: 'PharmaTech', logo: getClientImageUrl('client-temp.png') },
+      { name: 'HealthInnovate', logo: getClientImageUrl('client-temp.png') },
+      { name: 'MedicalSolutions', logo: getClientImageUrl('client-temp.png') },
     ]
   },
   {
     name: 'Retail & E-commerce',
     clients: [
-      { name: 'ShopGlobal', logo: '/images/clients/retail/client1.png' },
-      { name: 'RetailTech', logo: '/images/clients/retail/client2.png' },
-      { name: 'E-Store', logo: '/images/clients/retail/client3.png' },
-      { name: 'MarketPlace', logo: '/images/clients/retail/client4.png' },
+      { name: 'ShopGlobal', logo: getClientImageUrl('client-temp.png') },
+      { name: 'RetailTech', logo: getClientImageUrl('client-temp.png') },
+      { name: 'E-Store', logo: getClientImageUrl('client-temp.png') },
+      { name: 'MarketPlace', logo: getClientImageUrl('client-temp.png') },
     ]
   },
   {
     name: 'Manufacturing',
     clients: [
-      { name: 'IndustrialSolutions', logo: '/images/clients/manufacturing/client1.png' },
-      { name: 'TechManufacture', logo: '/images/clients/manufacturing/client2.png' },
-      { name: 'ProductionPro', logo: '/images/clients/manufacturing/client3.png' },
-      { name: 'IndustryTech', logo: '/images/clients/manufacturing/client4.png' },
+      { name: 'IndustrialSolutions', logo: getClientImageUrl('client-temp.png') },
+      { name: 'TechManufacture', logo: getClientImageUrl('client-temp.png') },
+      { name: 'ProductionPro', logo: getClientImageUrl('client-temp.png') },
+      { name: 'IndustryTech', logo: getClientImageUrl('client-temp.png') },
     ]
   },
 ]
@@ -61,7 +62,7 @@ const caseStudies = [
     industry: 'Energy & Oil',
     title: 'Digital Transformation of Document Management',
     description: 'How we helped GAIL modernize their document management system, improving efficiency and compliance.',
-    image: '/images/case-studies/case-study-1.jpg',
+    image: getClientImageUrl('gail.jpeg'),
     slug: 'gail-document-management'
   },
   {
@@ -69,7 +70,7 @@ const caseStudies = [
     industry: 'Financial Services',
     title: 'Blockchain-Based Transaction System',
     description: 'Implementing a secure, transparent blockchain solution for cross-border transactions.',
-    image: '/images/case-studies/case-study-2.jpg',
+    image: getClientImageUrl('client-temp.png'),
     slug: 'globalbank-blockchain'
   },
   {
@@ -77,7 +78,7 @@ const caseStudies = [
     industry: 'Healthcare & Pharmaceuticals',
     title: 'AI-Powered Patient Monitoring',
     description: 'Developing an intelligent system to track patient vital signs and predict potential health issues.',
-    image: '/images/case-studies/case-study-3.jpg',
+    image: getClientImageUrl('client-temp.png'),
     slug: 'healthinnovate-ai-monitoring'
   },
 ]
@@ -112,7 +113,7 @@ export default function ClientsPage() {
                 {category.clients.map((client, clientIndex) => (
                   <div key={clientIndex} className="flex items-center justify-center bg-white rounded-lg shadow-sm p-6 h-32">
                     <div className="relative h-full w-full">
-                      <Image
+                      <BlurImage
                         src={client.logo}
                         alt={`${client.name} logo`}
                         fill
@@ -141,7 +142,7 @@ export default function ClientsPage() {
             {caseStudies.map((study, index) => (
               <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm">
                 <div className="relative h-48">
-                  <Image
+                  <BlurImage
                     src={study.image}
                     alt={study.title}
                     fill
@@ -193,8 +194,8 @@ export default function ClientsPage() {
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <div className="relative h-16 w-16 rounded-full overflow-hidden">
-                    <Image
-                      src="/images/testimonials/testimonial-1.jpg"
+                    <BlurImage
+                      src="https://s3.rdpdatacenter.in/api/v1/buckets/hexta-dev/objects/download?preview=true&prefix=clients%2Fclient-temp.png&version_id=null"
                       alt="Testimonial author"
                       fill
                       className="object-cover"
@@ -216,8 +217,8 @@ export default function ClientsPage() {
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <div className="relative h-16 w-16 rounded-full overflow-hidden">
-                    <Image
-                      src="/images/testimonials/testimonial-2.jpg"
+                    <BlurImage
+                      src="https://s3.rdpdatacenter.in/api/v1/buckets/hexta-dev/objects/download?preview=true&prefix=clients%2Fclient-temp.png&version_id=null"
                       alt="Testimonial author"
                       fill
                       className="object-cover"
@@ -239,8 +240,8 @@ export default function ClientsPage() {
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <div className="relative h-16 w-16 rounded-full overflow-hidden">
-                    <Image
-                      src="/images/testimonials/testimonial-3.jpg"
+                    <BlurImage
+                      src="https://s3.rdpdatacenter.in/api/v1/buckets/hexta-dev/objects/download?preview=true&prefix=clients%2Fclient-temp.png&version_id=null"
                       alt="Testimonial author"
                       fill
                       className="object-cover"

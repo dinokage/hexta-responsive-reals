@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import BlurImage from '@/components/blur-image'
+import { getTeamImageUrl } from '@/lib/minio'
 
 export const metadata = {
   title: 'About Us | HextaSphere',
@@ -35,8 +36,8 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative h-80 rounded-lg overflow-hidden">
-              <Image
-                src="https://res.cloudinary.com/dc8ba4ljm/image/upload/v1745474322/hexta-about-1_wbet88.webp"
+              <BlurImage
+                src="/images/about-us/hexta-about-1.webp"
                 alt="HextaSphere team at work"
                 fill
                 className="object-cover"
@@ -127,8 +128,8 @@ export default function AboutPage() {
             {/* Team Member 1 */}
             <div className="text-center">
               <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
-                <Image
-                  src="https://res.cloudinary.com/dc8ba4ljm/image/upload/v1745470429/srinivasa-rao-vavilapalli_soqded.jpg"
+                <BlurImage
+                  src={getTeamImageUrl("srinivasa-rao-vavilapalli.jpeg")}
                   alt="CEO Portrait"
                   fill
                   className="object-contain"
@@ -144,8 +145,8 @@ export default function AboutPage() {
             {/* Team Member 2 */}
             <div className="text-center">
               <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
-                <Image
-                  src="https://res.cloudinary.com/dc8ba4ljm/image/upload/v1745470427/santosh-kumar-bogela_fdvwre.jpg"
+                <BlurImage
+                  src={getTeamImageUrl("santosh-kumar-bogela.jpeg")}
                   alt="CTO Portrait"
                   fill
                   className="object-cover"
@@ -161,8 +162,8 @@ export default function AboutPage() {
             {/* Team Member 3 */}
             <div className="text-center">
               <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
-                <Image
-                  src="https://res.cloudinary.com/dc8ba4ljm/image/upload/v1745470430/sudheer_op5ydh.jpg"
+                <BlurImage
+                  src={getTeamImageUrl("sudheer.jpeg")}
                   alt="COO Portrait"
                   fill
                   className="object-cover"

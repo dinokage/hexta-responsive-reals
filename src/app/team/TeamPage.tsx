@@ -184,7 +184,7 @@ export default function TeamPage() {
                 <>
                   <div className="relative h-64 rounded-lg overflow-hidden">
                     <BlurImage
-                      src="/images/team/culture-1.jpg"
+                      src="https://s3.rdpdatacenter.in/api/v1/buckets/hexta-dev/objects/download?preview=true&prefix=clients%2Fclient-temp.png&version_id=null"
                       alt="Team collaboration"
                       fill
                       className="object-cover"
@@ -192,7 +192,7 @@ export default function TeamPage() {
                   </div>
                   <div className="relative h-64 rounded-lg overflow-hidden">
                     <BlurImage
-                      src="/images/team/culture-2.jpg"
+                      src="https://s3.rdpdatacenter.in/api/v1/buckets/hexta-dev/objects/download?preview=true&prefix=clients%2Fclient-temp.png&version_id=null"
                       alt="Office environment"
                       fill
                       className="object-cover"
@@ -200,7 +200,7 @@ export default function TeamPage() {
                   </div>
                   <div className="relative h-64 rounded-lg overflow-hidden">
                     <BlurImage
-                      src="/images/team/culture-3.jpg"
+                      src="https://s3.rdpdatacenter.in/api/v1/buckets/hexta-dev/objects/download?preview=true&prefix=clients%2Fclient-temp.png&version_id=null"
                       alt="Team event"
                       fill
                       className="object-cover"
@@ -208,7 +208,7 @@ export default function TeamPage() {
                   </div>
                   <div className="relative h-64 rounded-lg overflow-hidden">
                     <BlurImage
-                      src="/images/team/culture-4.jpg"
+                      src="https://s3.rdpdatacenter.in/api/v1/buckets/hexta-dev/objects/download?preview=true&prefix=clients%2Fclient-temp.png&version_id=null"
                       alt="Working together"
                       fill
                       className="object-cover"

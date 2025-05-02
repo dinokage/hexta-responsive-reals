@@ -1,4 +1,4 @@
-// import Image from 'next/image'
+import { getProjectImageUrl } from '@/lib/minio'
 import ProjectCard from '@/components/projects/ProjectCard'
 
 // All projects data from the Figma design
@@ -7,84 +7,84 @@ const allProjects = [
     id: 'dms-oil-gas',
     title: 'DMS tailored for Oil & Gas industry',
     description: 'Developed a custom e-commerce platform with advanced features like real-time inventory management and secure payment processing.',
-    image: '/images/projects/dms.png',
+    image: getProjectImageUrl('dms.png'),
     slug: 'dms-oil-gas'
   },
   {
     id: 'blockchain',
     title: 'Blockchain - Smart Contracts',
     description: 'Implemented a blockchain-based voting system for secure and transparent elections, ensuring vote integrity and voter privacy.',
-    image: '/images/projects/blockchain.png',
+    image: getProjectImageUrl('blockchain.png'),
     slug: 'blockchain-smart-contracts'
   },
   {
     id: 'health-app',
     title: 'Health & Fitness App',
     description: 'Created a cross-platform mobile app for tracking workouts, nutrition, and health metrics, integrating with wearable devices.',
-    image: '/images/projects/health-app.png',
+    image: getProjectImageUrl('health.png'),
     slug: 'health-fitness-app'
   },
   {
     id: 'financial-dashboard',
     title: 'Financial Dashboard',
     description: 'Built a responsive web application for visualizing complex financial data in real-time with customizable reports and analytics.',
-    image: '/images/projects/financial.png',
+    image: getProjectImageUrl('financial-dashboard.png'),
     slug: 'financial-dashboard'
   },
   {
     id: 'social-media-analytics',
     title: 'Social Media Analytics Tool',
     description: 'Developed a tool for social media managers to track engagement, analyze trends and optimize content strategies with intuitive visualizations.',
-    image: '/images/projects/social-media-analysis.png',
+    image: getProjectImageUrl('social-media-analysis.png'),
     slug: 'social-media-analytics'
   },
   {
     id: 'iot-home',
     title: 'IoT Home Automation System',
     description: 'Created a system for controlling and monitoring smart home devices, with a user-friendly interface and secure protocols for device communication.',
-    image: '/images/projects/iot-automation.png',
+    image: getProjectImageUrl('iot-automation.png'),
     slug: 'iot-home-automation'
   },
   {
     id: 'online-learning',
     title: 'Online Learning Platform',
     description: 'Built an e-learning platform with features like interactive video courses, adaptive learning paths, and progress tracking for educators and students.',
-    image: '/images/projects/online-learning-platform.png',
+    image: getProjectImageUrl('online-learning-platform.png'),
     slug: 'online-learning-platform'
   },
   {
     id: 'restaurant-system',
     title: 'Restaurant Management System',
     description: 'Developed a comprehensive system for restaurant management, including ordering, inventory, staff scheduling, and analytics dashboards.',
-    image: '/images/projects/restaurant-management-system.png',
+    image: getProjectImageUrl('restaurant-management-system.png'),
     slug: 'restaurant-management'
   },
   {
     id: 'ar-shopping',
     title: 'Augmented Reality Shopping App',
     description: 'Created an AR app allowing users to virtually try on clothes and place furniture in their homes before purchasing, enhancing the shopping experience.',
-    image: '/images/projects/ar-shopping.png',
+    image: getProjectImageUrl('ar-shopping.png'),
     slug: 'ar-shopping-app'
   },
   {
     id: 'ai-chatbot',
     title: 'AI-powered Chatbot',
     description: 'Developed an AI chatbot using natural language processing to handle customer inquiries, provide support, and streamline customer service operations.',
-    image: '/images/projects/ai-chatbot.png',
+    image: getProjectImageUrl('ai-chatbot.png'),
     slug: 'ai-chatbot'
   },
   {
     id: 'remote-collab',
     title: 'Remote Team Collaboration Tool',
     description: 'Built a comprehensive platform for remote teams, featuring real-time document editing, task management, video conferencing, and team analytics.',
-    image: '/images/projects/team-collab.png',
+    image: getProjectImageUrl('team-collab.png'),
     slug: 'remote-collaboration'
   },
   {
     id: 'predictive-maintenance',
     title: 'Predictive Maintenance System',
     description: 'Created an IoT-based system for predicting equipment failures in industrial settings, using machine learning to analyze sensor data and prevent downtime.',
-    image: '/images/projects/maintenance.png',
+    image: getProjectImageUrl('maintenance.png'),
     slug: 'predictive-maintenance'
   }
 ]

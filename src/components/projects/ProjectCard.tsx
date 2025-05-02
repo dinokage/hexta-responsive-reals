@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import BlurImage from '../blur-image'
 import Link from 'next/link'
 
 interface Project {
@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="bg-light rounded-md overflow-hidden shadow-sm">
       <div className="relative h-60">
-        <Image
+        <BlurImage
           src={project.image}
           alt={project.title}
           fill
