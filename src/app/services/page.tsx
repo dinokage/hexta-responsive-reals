@@ -1,5 +1,11 @@
-import Image from 'next/image'
-import Link from 'next/link'
+'use client';
+
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { useEffect, useRef, useState } from 'react';
+
+// Import Lottie dynamically to avoid SSR issues
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 // Service data - in a real app, this would likely come from a CMS or API
 const services = [
@@ -7,7 +13,7 @@ const services = [
     id: 'it-services',
     title: 'IT Services',
     description: 'Comprehensive IT solutions tailored to your business needs.',
-    image: '/images/services/it/software-dev.jpg',
+    lottieAnimation: '/lottie/web-designer.json', // Replace with your actual Lottie JSON file path
     icon: '/images/icons/it-icon.svg',
     slug: 'it',
     offerings: [
@@ -47,7 +53,7 @@ const services = [
     id: 'engineering-services',
     title: 'Engineering Services',
     description: 'Innovative engineering solutions for complex challenges.',
-    image: '/images/carousel/engg-oils.jpg',
+    lottieAnimation: '/lottie/engineering.json', // Replace with your actual Lottie JSON file path
     icon: '/images/icons/engineering-icon.svg',
     slug: 'engineering',
     offerings: [
@@ -83,12 +89,7 @@ const services = [
       }
     ]
   }
-]
-
-export const metadata = {
-  title: 'Our Services | HextaSphere',
-  description: 'HextaSphere offers comprehensive IT and Engineering services including software development, cloud solutions, IoT, automation, and more.'
-}
+];
 
 export default function ServicesPage() {
   return (
@@ -110,15 +111,10 @@ export default function ServicesPage() {
             {services.map((service) => (
               <div key={service.id} className="rounded-lg overflow-hidden shadow-md bg-white" id={service.slug}>
                 <div className="relative h-64">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover"
+                  <LottieContainer 
+                    animationPath={service.lottieAnimation} 
+                    title={service.title} 
                   />
-                  <div className="absolute inset-0 bg-dark bg-opacity-40 flex items-center justify-center">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white">{service.title}</h2>
-                  </div>
                 </div>
                 <div className="p-6">
                   <p className="text-dark mb-6">{service.description}</p>
@@ -159,5 +155,65 @@ export default function ServicesPage() {
         </div>
       </section>
     </>
-  )
+  );
 }
+
+// Define types for the LottieContainer props
+interface LottieContainerProps {
+  animationPath: string;
+  title: string;
+}
+
+// Lottie container component with dark overlay
+const LottieContainer = ({ animationPath, title }: LottieContainerProps) => {
+  const lottieRef = useRef(null);
+
+  // Load animation data
+  const [animationData, setAnimationData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadAnimation = async () => {
+      try {
+        // In a real implementation, you'd import directly or fetch the JSON
+        // Here we're assuming the JSON file is available at the public path
+        const response = await fetch(animationPath);
+        const data = await response.json();
+        setAnimationData(data);
+      } catch (error) {
+        console.error("Failed to load Lottie animation:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadAnimation();
+  }, [animationPath]);
+
+  return (
+    <div className="relative h-full w-full">
+      {isLoading ? (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+        </div>
+      ) : animationData ? (
+        <Lottie
+          animationData={animationData}
+          loop={true}
+          autoplay={true}
+          style={{ width: '100%', height: '100%' }}
+          lottieRef={lottieRef}
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+          <p className="text-gray-500">Animation not available</p>
+        </div>
+      )}
+      
+      {/* Overlay with title */}
+      <div className="absolute inset-0 bg-dark bg-opacity-40 flex items-center justify-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-white">{title}</h2>
+      </div>
+    </div>
+  );
+};

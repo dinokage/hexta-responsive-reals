@@ -161,3 +161,8 @@ body {
   50% { opacity: 1; }
   100% { transform: scale(1.2); opacity: 0; }
 }
+
+::selection {
+  @apply bg-black text-white dark:text-black dark:bg-white;
+}
+
