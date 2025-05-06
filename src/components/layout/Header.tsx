@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header className={`w-full transition-all duration-300 ${
-      scrolled ? 'bg-background shadow-md py-2' : 'bg-background/80 py-4'
+      scrolled ? 'supports-backdrop-blur:bg-background/90 sticky top-0 z-40 w-full border-border bg-background/10 backdrop-blur' : 'supports-backdrop-blur:bg-background/90 py-4'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
