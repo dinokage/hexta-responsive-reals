@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import ThemeSwitch from '@/components/ThemeSwitch'
+import { ModeToggle } from '@/components/mode-toggle'
 import HextaLogo from './Logo'
 
 const menuItems = [
@@ -19,21 +19,10 @@ const menuItems = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <header className={`w-full transition-all duration-300 ${
-      scrolled ? 'supports-backdrop-blur:bg-background/90 sticky top-0 z-40 w-full border-border bg-background/10 backdrop-blur' : 'supports-backdrop-blur:bg-background/90 py-4'
-    }`}>
+    <header className="w-full fixed top-0 z-40 py-4 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
@@ -58,12 +47,13 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              <ModeToggle />
             </nav>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
-            <ThemeSwitch />
+            <ModeToggle />
             <button
               className="text-foreground"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -76,7 +66,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden pt-4 pb-6 border-t mt-4 border-border">
+          <nav className="md:hidden pt-4 pb-6 border-t mt-4 border-border backdrop-blur-md bg-background/70">
             <ul className="flex flex-col space-y-4">
               {menuItems.map((item) => (
                 <li key={item.name}>

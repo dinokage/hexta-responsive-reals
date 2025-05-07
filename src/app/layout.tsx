@@ -36,9 +36,9 @@ export default function RootLayout({
         <PostHogProvider>
           <HeroUIProvider>
             <ThemeProvider attribute="class">
-              <NextTopLoader color="#007BFF" />
+              <NextTopLoader color="#007BFF" showSpinner={false} initialPosition={0.2}  />
               <Header />
-              <main className="min-h-screen">
+              <main className="relative">
                 {children}
               </main>
               <Footer />

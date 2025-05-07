@@ -1,11 +1,11 @@
 "use client";
-
+import { ShinyText } from "@/components/magicui/ShinyText";
 import Aurora from "@/components/ui/Aurora";
 import { motion } from "motion/react";
 
 export function HeroSectionOne() {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full min-h-screen">
       {/* Position the Aurora absolutely with a fixed height from the top */}
       <div className="absolute inset-x-0 top-0 h-full z-0 overflow-hidden">
         <Aurora 
@@ -15,9 +15,9 @@ export function HeroSectionOne() {
           speed={0.5}
         />
       </div>
-      
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center">
-        <div className="px-4 md:py-20">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center min-h-screen">
+        <div className="px-4">
+          <ShinyText />
           <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
             {"Launch your website in hours, not days"
               .split(" ")
