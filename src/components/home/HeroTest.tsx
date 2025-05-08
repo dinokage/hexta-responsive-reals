@@ -17,7 +17,18 @@ export function HeroSectionOne() {
       </div>
       <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center min-h-screen">
         <div className="px-4">
-          <ShinyText />
+          {/* Animate ShinyText with a gentle fade-in and scale effect after text animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.7,
+              delay: 1.2, // Start after the text animation (which has 0.8 delay + ~0.4s for animation)
+              ease: "easeInOut"
+            }}
+          >
+            <ShinyText />
+          </motion.div>
           <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
             {"Launch your website in hours, not days"
               .split(" ")
