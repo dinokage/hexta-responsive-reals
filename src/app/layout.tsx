@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Open_Sans } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -8,10 +8,10 @@ import { ThemeProvider } from '@/components/theme-provider'
 import NextTopLoader from 'nextjs-toploader'
 import { PostHogProvider } from '@/components/PostHogProvider'
 
-const openSans = Open_Sans({ 
+const jakartaSans = Plus_Jakarta_Sans({ 
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-open-sans',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-jakarta-sans',
 })
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable} font-sans`}>
+      <body className={`${jakartaSans.variable} font-sans`}>
         <PostHogProvider>
           <HeroUIProvider>
             <ThemeProvider attribute="class">

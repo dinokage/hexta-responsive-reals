@@ -86,11 +86,8 @@ const config: Config = {
   			}
   		},
 		  fontFamily: {
-			sans: [
-				'Open Sans',
-				'sans-serif'
-			]
-		},
+			sans: ['var(--font-jakarta-sans)', 'system-ui', 'sans-serif'],
+		  },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
