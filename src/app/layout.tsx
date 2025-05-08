@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
@@ -12,6 +13,28 @@ const jakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-jakarta-sans',
+})
+
+// Load Cabinet Grotesk for hero section headings
+const cabinetGrotesk = localFont({
+  src: [
+    {
+      path: './fonts/CabinetGrotesk-Regular.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/CabinetGrotesk-Medium.woff',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/CabinetGrotesk-Bold.woff',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-cabinet-grotesk',
 })
 
 export const metadata: Metadata = {
@@ -32,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${jakartaSans.variable} font-sans`}>
+      <body className={`${jakartaSans.variable} ${cabinetGrotesk.variable} font-sans`}>
         <PostHogProvider>
           <HeroUIProvider>
             <ThemeProvider attribute="class">

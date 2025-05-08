@@ -61,11 +61,17 @@
   --chart-5: 340 75% 55%;
 }
 
+/* Font variables */
+:root {
+  --font-body: var(--font-jakarta-sans), system-ui, sans-serif;
+  --font-heading: var(--font-cabinet-grotesk), system-ui, sans-serif;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--font-jakarta-sans), system-ui, sans-serif;
+  font-family: var(--font-body);
   scroll-behavior: smooth;
 }
 
@@ -73,6 +79,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
   font-weight: 600;
+}
+
+/* Hero title specific styling */
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .prose {
@@ -170,4 +183,8 @@ h1, h2, h3, h4, h5, h6 {
 
 ::selection {
   @apply bg-black text-white dark:text-black dark:bg-white;
+}
+@keyframes smoothPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.9; }
 }

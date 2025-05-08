@@ -75,10 +75,23 @@ export default function Footer() {
         </div>
         
         {/* Copyright */}
-        <div className="h-px w-full bg-gray-200 my-8"></div>
+        <div className="flex flex-col items-center justify-between gap-2 border-t border-gray-200 pt-4 sm:mt-20 sm:flex-row lg:mt-24 dark:border-gray-800"></div>
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-dark text-xs mb-4 md:mb-0">
-            © {currentYear} HextaSphere. All rights reserved. info@hextasphere.com
+            © {currentYear} HextaSphere. All rights reserved.
+          </p>
+          
+          <p className="text-dark text-xs mb-4 md:mb-0">
+            Crafted with{" "}
+            <span 
+              className="inline-block text-red-500"
+              style={{
+                animation: "smoothPulse 1.5s ease-in-out infinite"
+              }}
+            >
+              ❤
+            </span>
+            {" "}by HextaSphere
           </p>
           
           {/* Status Indicator */}

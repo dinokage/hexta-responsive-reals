@@ -87,6 +87,7 @@ const config: Config = {
   		},
 		  fontFamily: {
 			sans: ['var(--font-jakarta-sans)', 'system-ui', 'sans-serif'],
+			heading: ['var(--font-cabinet-grotesk)', 'system-ui', 'sans-serif'],
 		  },
   		borderRadius: {
   			lg: 'var(--radius)',
