@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
-import Header from '@/components/layout/Header'
+import {Navbar} from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { HeroUIProvider } from "@heroui/react"
 import { ThemeProvider } from '@/components/theme-provider'
@@ -60,7 +60,7 @@ export default function RootLayout({
           <HeroUIProvider>
             <ThemeProvider attribute="class">
               <NextTopLoader color="#007BFF" showSpinner={false} initialPosition={0.2}  />
-              <Header />
+              <Navbar />
               <main className="relative">
                 {children}
               </main>
