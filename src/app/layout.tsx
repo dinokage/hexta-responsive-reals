@@ -8,6 +8,8 @@ import { HeroUIProvider } from "@heroui/react"
 import { ThemeProvider } from '@/components/theme-provider'
 import NextTopLoader from 'nextjs-toploader'
 import { PostHogProvider } from '@/components/PostHogProvider'
+import LenisProvider from '@/components/LenisProvider'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const jakartaSans = Plus_Jakarta_Sans({ 
   subsets: ['latin'],
@@ -59,12 +61,15 @@ export default function RootLayout({
         <PostHogProvider>
           <HeroUIProvider>
             <ThemeProvider attribute="class">
-              <NextTopLoader color="#007BFF" showSpinner={false} initialPosition={0.2}  />
-              <Navbar />
-              <main className="flex-1">
-                {children}
-              </main>
-              <Footer />
+              <LenisProvider>
+                <NextTopLoader color="#007BFF" showSpinner={false} initialPosition={0.2} />
+                <Navbar />
+                <main className="flex-1">
+                  {children}
+                </main>
+                <ScrollToTop />
+                <Footer />
+              </LenisProvider>
             </ThemeProvider>
           </HeroUIProvider>
         </PostHogProvider>
