@@ -6,51 +6,31 @@ export const metadata = {
   description: 'Discover the companies and organizations that trust HextaSphere for their IT and engineering needs.'
 }
 
-// Client categories and data - in a real app, this would come from a CMS or API
+// Client categories and data with light/dark variants
 const clientCategories = [
   {
-    name: 'Energy & Oil',
+    name: 'Brands That Trust Us',
     clients: [
-      { name: 'GAIL', logo: getClientImageUrl('gail.jpeg') },
-      { name: 'PetroTech', logo: getClientImageUrl('client-temp.png') },
-      { name: 'EnergySolutions', logo: getClientImageUrl('client-temp.png') },
-      { name: 'GreenPower', logo: getClientImageUrl('client-temp.png') },
-    ]
-  },
-  {
-    name: 'Financial Services',
-    clients: [
-      { name: 'GlobalBank', logo: getClientImageUrl('client-temp.png') },
-      { name: 'InvestCorp', logo: getClientImageUrl('client-temp.png') },
-      { name: 'FinTrust', logo: getClientImageUrl('client-temp.png') },
-      { name: 'SecureFinance', logo: getClientImageUrl('client-temp.png') },
-    ]
-  },
-  {
-    name: 'Healthcare & Pharmaceuticals',
-    clients: [
-      { name: 'MediCare', logo: getClientImageUrl('client-temp.png') },
-      { name: 'PharmaTech', logo: getClientImageUrl('client-temp.png') },
-      { name: 'HealthInnovate', logo: getClientImageUrl('client-temp.png') },
-      { name: 'MedicalSolutions', logo: getClientImageUrl('client-temp.png') },
-    ]
-  },
-  {
-    name: 'Retail & E-commerce',
-    clients: [
-      { name: 'ShopGlobal', logo: getClientImageUrl('client-temp.png') },
-      { name: 'RetailTech', logo: getClientImageUrl('client-temp.png') },
-      { name: 'E-Store', logo: getClientImageUrl('client-temp.png') },
-      { name: 'MarketPlace', logo: getClientImageUrl('client-temp.png') },
-    ]
-  },
-  {
-    name: 'Manufacturing',
-    clients: [
-      { name: 'IndustrialSolutions', logo: getClientImageUrl('client-temp.png') },
-      { name: 'TechManufacture', logo: getClientImageUrl('client-temp.png') },
-      { name: 'ProductionPro', logo: getClientImageUrl('client-temp.png') },
-      { name: 'IndustryTech', logo: getClientImageUrl('client-temp.png') },
+      { 
+        name: 'Classique', 
+        logoLight: getClientImageUrl('classique_light.svg'),
+        logoDark: getClientImageUrl('classique_dark.svg') 
+      },
+      { 
+        name: 'Eshani', 
+        logoLight: getClientImageUrl('eshani_light.svg'),
+        logoDark: getClientImageUrl('eshani_dark.svg') 
+      },
+      { 
+        name: 'Mining Mart', 
+        logoLight: getClientImageUrl('miningmart_light.svg'),
+        logoDark: getClientImageUrl('miningmart_dark.svg') 
+      },
+      { 
+        name: 'Continental Coffee', 
+        logoLight: getClientImageUrl('coffee.svg'),
+        logoDark: getClientImageUrl('coffee.svg') 
+      },
     ]
   },
 ]
@@ -96,12 +76,12 @@ export default function ClientsPage() {
         </div>
       </section>
       
-      {/* Client Showcase */}
+      {/* Client Showcase - Using CSS for theme switching */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-dark mb-4">Trusted by Leading Organizations</h2>
-            <p className="text-dark max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold text-dark dark:text-white mb-4">Trusted by Leading Organizations</h2>
+            <p className="text-dark dark:text-gray-300 max-w-3xl mx-auto">
               At HextaSphere, we take pride in the partnerships we&apos;ve built with clients across a diverse range of industries.
             </p>
           </div>
@@ -111,10 +91,20 @@ export default function ClientsPage() {
               <h3 className="text-xl font-semibold text-primary mb-6 border-b border-gray-200 pb-2">{category.name}</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {category.clients.map((client, clientIndex) => (
-                  <div key={clientIndex} className="flex items-center justify-center bg-white rounded-lg shadow-sm p-6 h-32">
-                    <div className="relative h-full w-full">
+                  <div key={clientIndex} className="flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 h-32">
+                    {/* Light mode image - hidden in dark mode */}
+                    <div className="relative h-full w-full block dark:hidden">
                       <BlurImage
-                        src={client.logo}
+                        src={client.logoLight}
+                        alt={`${client.name} logo`}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    {/* Dark mode image - hidden in light mode */}
+                    <div className="relative h-full w-full hidden dark:block">
+                      <BlurImage
+                        src={client.logoDark}
                         alt={`${client.name} logo`}
                         fill
                         className="object-contain"
@@ -129,18 +119,18 @@ export default function ClientsPage() {
       </section>
       
       {/* Case Studies Section */}
-      <section className="py-16 bg-light">
+      <section className="py-16 bg-light dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-dark mb-4">Case Studies</h2>
-            <p className="text-dark max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold text-dark dark:text-white mb-4">Case Studies</h2>
+            <p className="text-dark dark:text-gray-300 max-w-3xl mx-auto">
               Explore how our solutions have helped clients overcome challenges and achieve their business objectives.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {caseStudies.map((study, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm">
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm">
                 <div className="relative h-48">
                   <BlurImage
                     src={study.image}
@@ -152,10 +142,10 @@ export default function ClientsPage() {
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-primary font-semibold">{study.client}</span>
-                    <span className="text-sm text-gray-500">{study.industry}</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">{study.industry}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-dark mb-3">{study.title}</h3>
-                  <p className="text-gray-600 mb-4">{study.description}</p>
+                  <h3 className="text-lg font-semibold text-dark dark:text-white mb-3">{study.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{study.description}</p>
                   <a 
                     href={`/case-studies/${study.slug}`}
                     className="text-primary font-semibold hover:underline"
@@ -182,15 +172,15 @@ export default function ClientsPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-dark mb-4">What Our Clients Say</h2>
-            <p className="text-dark max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold text-dark dark:text-white mb-4">What Our Clients Say</h2>
+            <p className="text-dark dark:text-gray-300 max-w-3xl mx-auto">
               Don&apos;t just take our word for it—here&apos;s what our clients have to say about working with HextaSphere.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-light rounded-lg p-6 shadow-sm">
+            <div className="bg-light dark:bg-gray-800 rounded-lg p-6 shadow-sm">
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <div className="relative h-16 w-16 rounded-full overflow-hidden">
@@ -203,17 +193,17 @@ export default function ClientsPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-dark">Robert Johnson</h3>
-                  <p className="text-gray-600 text-sm">CTO, GlobalBank</p>
+                  <h3 className="font-semibold text-dark dark:text-white">Robert Johnson</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">CTO, GlobalBank</p>
                 </div>
               </div>
-              <p className="text-dark italic">
+              <p className="text-dark dark:text-gray-300 italic">
                 &quot;HextaSphere delivered a blockchain solution that transformed our cross-border transaction processes. Their expertise and collaborative approach made them an invaluable partner.&quot;
               </p>
             </div>
             
             {/* Testimonial 2 */}
-            <div className="bg-light rounded-lg p-6 shadow-sm">
+            <div className="bg-light dark:bg-gray-800 rounded-lg p-6 shadow-sm">
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <div className="relative h-16 w-16 rounded-full overflow-hidden">
@@ -226,17 +216,17 @@ export default function ClientsPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-dark">Maria Rodriguez</h3>
-                  <p className="text-gray-600 text-sm">Director of IT, GAIL</p>
+                  <h3 className="font-semibold text-dark dark:text-white">Maria Rodriguez</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">Director of IT, GAIL</p>
                 </div>
               </div>
-              <p className="text-dark italic">
+              <p className="text-dark dark:text-gray-300 italic">
                 &quot;The document management system HextaSphere developed has significantly improved our operational efficiency and compliance posture. Their understanding of the energy sector was evident throughout the project.&quot;
               </p>
             </div>
             
             {/* Testimonial 3 */}
-            <div className="bg-light rounded-lg p-6 shadow-sm">
+            <div className="bg-light dark:bg-gray-800 rounded-lg p-6 shadow-sm">
               <div className="flex items-center mb-4">
                 <div className="mr-4">
                   <div className="relative h-16 w-16 rounded-full overflow-hidden">
@@ -249,11 +239,11 @@ export default function ClientsPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-dark">David Chang</h3>
-                  <p className="text-gray-600 text-sm">CEO, HealthInnovate</p>
+                  <h3 className="font-semibold text-dark dark:text-white">David Chang</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">CEO, HealthInnovate</p>
                 </div>
               </div>
-              <p className="text-dark italic">
+              <p className="text-dark dark:text-gray-300 italic">
                 &quot;Working with HextaSphere on our AI patient monitoring system was a game-changer. Their technical expertise, combined with a genuine understanding of healthcare challenges, resulted in a solution that&apos;s saving lives.&quot;
               </p>
             </div>

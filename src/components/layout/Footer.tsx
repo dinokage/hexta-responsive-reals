@@ -51,7 +51,7 @@ export default function Footer() {
               <p className="text-dark text-sm mb-2">TF2, VUDA Complex,</p>
               <p className="text-dark text-sm mb-2">Seethammadara,</p>
               <p className="text-dark text-sm mb-2">Visakhapatnam</p>
-              <p className="text-dark text-sm mb-2">Phone: <a href='tel:891'>+91 (891) 123-4567</a></p>
+              <p className="text-dark text-sm mb-2">Phone: <a href='tel:8977783448'>+91 8977783448</a></p>
               <p className="text-dark text-sm mb-2">Email: <a href='mailto:info@hextasphere.com'>info@hextasphere.com</a></p>
             </address>
           </div>

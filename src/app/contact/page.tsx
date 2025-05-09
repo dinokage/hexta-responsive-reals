@@ -83,9 +83,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-dark">Our Office</h3>
                     <address className="not-italic">
-                      <p>123 Tech Lane,</p>
-                      <p>Innovation Park,</p>
-                      <p>CA 94103</p>
+                      <p>TF2, VUDA Complex,</p>
+                      <p>Seethammadara,</p>
+                      <p>Visakhapatnam</p>
                     </address>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-dark">Phone</h3>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+91 8977783448</p>
                   </div>
                 </div>
                 
@@ -113,7 +113,7 @@ export default function ContactPage() {
               
               <div className="mt-8">
                 <h3 className="text-xl font-semibold text-dark mb-4">Business Hours</h3>
-                <p className="mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p className="mb-2">Monday - Friday: 9:30 AM - 6:00 PM</p>
                 <p>Saturday - Sunday: Closed</p>
               </div>
             </div>
