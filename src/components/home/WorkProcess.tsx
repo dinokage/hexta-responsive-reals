@@ -43,7 +43,7 @@ export default function WorkProcess() {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
           backgroundSize: 'cover',
-          clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%)',
+          clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%)',
         }}
       />
       
