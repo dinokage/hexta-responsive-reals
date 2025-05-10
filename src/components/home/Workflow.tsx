@@ -24,7 +24,6 @@ const Workflow = () => {
   });
   
   // Create a subtle parallax effect for the image only
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.3, 1], [0, 1, 1]);
   const scale = useTransform(scrollYProgress, [0, 0.3, 1], [0.95, 1, 1]);
   
@@ -64,8 +63,6 @@ const Workflow = () => {
         </h2>
       </motion.div>
       
-      {/* Only apply parallax to the image */}
-      <motion.div style={{ y: imageY }}>
         <Image
           src={"/banner.svg"}
           alt="Workflow Image"
@@ -73,7 +70,6 @@ const Workflow = () => {
           height={296}
           priority
         />
-      </motion.div>
     </section>
   );
 };
