@@ -17,6 +17,8 @@ uniform float uAmplitude;
 uniform vec3 uColorStops[3];
 uniform vec2 uResolution;
 uniform float uBlend;
+uniform float uBrightness;
+uniform bool uDarkTheme;
 
 out vec4 fragColor;
 
@@ -102,7 +104,21 @@ void main() {
   float midPoint = 0.20;
   float auroraAlpha = smoothstep(midPoint - uBlend * 0.5, midPoint + uBlend * 0.5, intensity);
   
+  // Adjust colors based on theme
   vec3 auroraColor = intensity * rampColor;
+  
+  if (uDarkTheme) {
+    // Dark theme: use original behavior
+    auroraColor *= uBrightness;
+  } else {
+    // Light theme: apply different color adjustments
+    // Make colors more vibrant and opaque for light backgrounds
+    auroraColor = mix(auroraColor, rampColor, 0.6) * uBrightness;
+    // Increase contrast
+    auroraColor = pow(auroraColor, vec3(1.2));
+    // Boost alpha for better visibility
+    auroraAlpha = min(1.0, auroraAlpha * 2.0);
+  }
   
   fragColor = vec4(auroraColor * auroraAlpha, auroraAlpha);
 }
@@ -114,6 +130,8 @@ interface AuroraProps {
   blend?: number;
   time?: number;
   speed?: number;
+  darkTheme?: boolean;
+  brightness?: number;
 }
 
 export default function Aurora(props: AuroraProps) {
@@ -121,6 +139,8 @@ export default function Aurora(props: AuroraProps) {
     colorStops = ["#00d8ff", "#7cff67", "#00d8ff"],
     amplitude = 1.0,
     blend = 0.5,
+    darkTheme = true,
+    brightness = 1.0,
   } = props;
   const propsRef = useRef<AuroraProps>(props);
   propsRef.current = props;
@@ -139,7 +159,14 @@ export default function Aurora(props: AuroraProps) {
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);
     gl.enable(gl.BLEND);
-    gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+    
+    // Different blend modes for light/dark themes
+    if (darkTheme) {
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+    } else {
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    }
+    
     gl.canvas.style.backgroundColor = "transparent";
 
     let program: Program | null = null;
@@ -176,6 +203,8 @@ export default function Aurora(props: AuroraProps) {
         uColorStops: { value: colorStopsArray },
         uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
         uBlend: { value: blend },
+        uBrightness: { value: brightness },
+        uDarkTheme: { value: darkTheme },
       },
     });
 
@@ -185,16 +214,38 @@ export default function Aurora(props: AuroraProps) {
     let animateId = 0;
     const update = (t: number) => {
       animateId = requestAnimationFrame(update);
-      const { time = t * 0.01, speed = 1.0 } = propsRef.current;
+      const { 
+        time = t * 0.01, 
+        speed = 1.0,
+        darkTheme: currentDarkTheme = true
+      } = propsRef.current;
+      
       if (program) {
         program.uniforms.uTime.value = time * speed * 0.1;
         program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
         program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
+        program.uniforms.uBrightness.value = propsRef.current.brightness ?? 1.0;
+        program.uniforms.uDarkTheme.value = currentDarkTheme;
+        
         const stops = propsRef.current.colorStops ?? colorStops;
         program.uniforms.uColorStops.value = stops.map((hex: string) => {
           const c = new Color(hex);
           return [c.r, c.g, c.b];
         });
+        
+        // Update blend mode if theme changed
+        const newDarkTheme = propsRef.current.darkTheme ?? true;
+        const currentBlendSrc = gl.getParameter(gl.BLEND_SRC_RGB);
+        const expectedBlendSrc = newDarkTheme ? gl.ONE : gl.SRC_ALPHA;
+        
+        if (currentBlendSrc !== expectedBlendSrc) {
+          if (newDarkTheme) {
+            gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+          } else {
+            gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+          }
+        }
+        
         renderer.render({ scene: mesh });
       }
     };
@@ -213,7 +264,7 @@ export default function Aurora(props: AuroraProps) {
         loseContextExt.loseContext();
       }
     };
-  }, [amplitude, blend, colorStops]); // Add missing dependencies
+  }, [amplitude, blend, colorStops, darkTheme, brightness]); // Add missing dependencies
 
   return <div ref={ctnDom} className="w-full h-full" />;
 }
