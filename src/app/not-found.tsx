@@ -14,12 +14,12 @@ export const metadata: Metadata = {
         title: `404 Not Found | ${siteConfig.name}`,
         description: 'The page you are looking for does not exist.',
     },
-    }
+}
 
 // Dynamically import client components
 const AuroraBackground = dynamic(() => import('@/components/AuroraBackground'), {
   ssr: false,
-  loading: () => <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800" />
+  loading: () => <div className="absolute inset" />
 })
 
 const AnimatedContent = dynamic(() => import('@/components/AnimatedContent'), {
