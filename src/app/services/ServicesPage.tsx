@@ -130,8 +130,8 @@ export default function ServicesPage() {
       {/* Services Hero */}
       <section className="relative pt-32 pb-16 bg-primary">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h1>
-          <p className="text-lg text-white max-w-2xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">Our Services</h1>
+          <p className="text-lg text-black dark:text-white max-w-2xl">
             HextaSphere delivers comprehensive technology solutions to address complex business challenges.
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function ServicesPage() {
                     {service.offerings.map((offering, index) => (
                       <div key={index} className="flex gap-4">
                         <div className="w-10 h-10 flex-shrink-0 bg-purple-500 rounded-full flex items-center justify-center">
-                          {getIcon(offering.icon, "w-5 h-5 text-white")}
+                          {getIcon(offering.icon, "w-5 h-5 text-black dark:text-white")}
                         </div>
                         <div>
                           <h4 className="font-semibold text-dark">{offering.title}</h4>
@@ -179,7 +179,7 @@ export default function ServicesPage() {
             </p>
             <Link 
               href="/contact"
-              className="inline-block px-8 py-3 bg-primary text-white rounded font-semibold hover:bg-opacity-90 transition"
+              className="inline-block px-8 py-3 bg-primary text-black dark:text-white rounded font-semibold hover:bg-opacity-90 transition"
             >
               Get in Touch
             </Link>
@@ -226,7 +226,7 @@ const LottieContainer = ({ animationPath, title }: LottieContainerProps) => {
     <div className="relative h-full w-full">
       {/* Title at the top with larger text */}
       <div className="absolute -top- left-0 right-0 z-10 bg-dark bg-opacity-70 p-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center">{title}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white text-center">{title}</h2>
       </div>
       
       {isLoading ? (

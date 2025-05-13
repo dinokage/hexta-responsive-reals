@@ -69,8 +69,8 @@ export default function ClientsPage() {
       {/* Clients Hero */}
       <section className="relative pt-32 pb-16 bg-primary">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Clients</h1>
-          <p className="text-lg text-white max-w-2xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">Our Clients</h1>
+          <p className="text-lg text-black dark:text-white max-w-2xl">
             We partner with organizations across industries to deliver innovative technology solutions that drive business growth.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function ClientsPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-dark dark:text-white mb-4">Trusted by Leading Organizations</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-dark dark:text-black dark:text-white mb-4">Trusted by Leading Organizations</h2>
             <p className="text-dark dark:text-gray-300 max-w-3xl mx-auto">
               At HextaSphere, we take pride in the partnerships we&apos;ve built with clients across a diverse range of industries.
             </p>
@@ -122,7 +122,7 @@ export default function ClientsPage() {
       <section className="py-16 bg-light dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-dark dark:text-white mb-4">Case Studies</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-dark dark:text-black dark:text-white mb-4">Case Studies</h2>
             <p className="text-dark dark:text-gray-300 max-w-3xl mx-auto">
               Explore how our solutions have helped clients overcome challenges and achieve their business objectives.
             </p>
@@ -144,7 +144,7 @@ export default function ClientsPage() {
                     <span className="text-primary font-semibold">{study.client}</span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">{study.industry}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-dark dark:text-white mb-3">{study.title}</h3>
+                  <h3 className="text-lg font-semibold text-dark dark:text-black dark:text-white mb-3">{study.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">{study.description}</p>
                   <a 
                     href={`/case-studies/${study.slug}`}
@@ -160,7 +160,7 @@ export default function ClientsPage() {
           <div className="text-center mt-10">
             <a 
               href="/case-studies"
-              className="inline-block px-6 py-3 bg-primary text-white rounded font-semibold hover:bg-opacity-90 transition"
+              className="inline-block px-6 py-3 bg-primary text-black dark:text-white rounded font-semibold hover:bg-opacity-90 transition"
             >
               View All Case Studies
             </a>
@@ -172,7 +172,7 @@ export default function ClientsPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-dark dark:text-white mb-4">What Our Clients Say</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-dark dark:text-black dark:text-white mb-4">What Our Clients Say</h2>
             <p className="text-dark dark:text-gray-300 max-w-3xl mx-auto">
               Don&apos;t just take our word for it—here&apos;s what our clients have to say about working with HextaSphere.
             </p>
@@ -193,7 +193,7 @@ export default function ClientsPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-dark dark:text-white">Robert Johnson</h3>
+                  <h3 className="font-semibold text-dark dark:text-black dark:text-white">Robert Johnson</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">CTO, GlobalBank</p>
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function ClientsPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-dark dark:text-white">Maria Rodriguez</h3>
+                  <h3 className="font-semibold text-dark dark:text-black dark:text-white">Maria Rodriguez</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">Director of IT, GAIL</p>
                 </div>
               </div>
@@ -239,7 +239,7 @@ export default function ClientsPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-dark dark:text-white">David Chang</h3>
+                  <h3 className="font-semibold text-dark dark:text-black dark:text-white">David Chang</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">CEO, HealthInnovate</p>
                 </div>
               </div>
@@ -254,8 +254,8 @@ export default function ClientsPage() {
       {/* Partnership CTA */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-white text-lg max-w-2xl mx-auto mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-6">Ready to Transform Your Business?</h2>
+          <p className="text-black dark:text-white text-lg max-w-2xl mx-auto mb-8">
             Join our growing list of satisfied clients and discover how HextaSphere can help you achieve your technology goals.
           </p>
           <a 

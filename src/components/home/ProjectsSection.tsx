@@ -52,7 +52,7 @@ export default function ProjectsSection() {
         <div className="mt-12 text-center">
           <Link 
             href="/projects"
-            className="inline-flex items-center px-6 py-2 bg-primary text-white rounded text-sm"
+            className="inline-flex items-center px-6 py-2 bg-primary text-black dark:text-white rounded text-sm"
           >
             View All
             <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

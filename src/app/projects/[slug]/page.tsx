@@ -109,8 +109,8 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{project.title}</h1>
-              <p className="text-lg text-white">{project.description}</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">{project.title}</h1>
+              <p className="text-lg text-black dark:text-white">{project.description}</p>
             </div>
             <div className="md:w-1/2 relative h-64 w-full rounded-md overflow-hidden">
               <Image

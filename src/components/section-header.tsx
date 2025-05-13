@@ -13,7 +13,7 @@ export default function SectionHeader({ title, slogan, isWhite = false }: Sectio
         className={`
           text-sm md:text-base font-medium leading-relaxed mb-2 uppercase tracking-wider
           ${isWhite 
-            ? 'text-white opacity-70' 
+            ? 'text-black dark:text-white opacity-70' 
             : 'text-blue-600 dark:text-blue-400'
           }
         `}
@@ -24,8 +24,8 @@ export default function SectionHeader({ title, slogan, isWhite = false }: Sectio
         className={`
           text-3xl md:text-4xl lg:text-5xl font-bold leading-tight
           ${isWhite 
-            ? 'text-white' 
-            : 'text-gray-900 dark:text-white'
+            ? 'text-black dark:text-white' 
+            : 'text-gray-900 dark:text-black dark:text-white'
           }
         `}
       >

@@ -24,7 +24,7 @@ export default function OfflinePage() {
         <div className="space-y-4">
           <Link 
             href="/"
-            className="block w-full px-6 py-3 bg-primary text-white rounded font-semibold hover:bg-opacity-90 transition"
+            className="block w-full px-6 py-3 bg-primary text-black dark:text-white rounded font-semibold hover:bg-opacity-90 transition"
           >
             Try Again
           </Link>

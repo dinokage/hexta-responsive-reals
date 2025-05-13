@@ -100,8 +100,8 @@ export default function ProjectsPage() {
       {/* Projects Hero */}
       <section className="relative pt-32 pb-16 bg-primary">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Projects</h1>
-          <p className="text-lg text-white max-w-2xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">Our Projects</h1>
+          <p className="text-lg text-black dark:text-white max-w-2xl">
             Explore our portfolio of cutting-edge solutions across various industries and technologies.
           </p>
         </div>

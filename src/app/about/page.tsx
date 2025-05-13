@@ -12,8 +12,8 @@ export default function AboutPage() {
       {/* About Hero */}
       <section className="relative pt-32 pb-16 bg-primary">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">About HextaSphere</h1>
-          <p className="text-lg text-white max-w-2xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">About HextaSphere</h1>
+          <p className="text-lg text-black dark:text-white max-w-2xl">
             We&apos;re on a mission to transform businesses through innovative technology solutions.
           </p>
         </div>

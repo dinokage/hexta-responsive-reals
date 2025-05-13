@@ -18,17 +18,17 @@ export default function HeroSection() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="min-h-[500px] flex flex-col justify-center items-start">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-2xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-6 max-w-2xl">
             Innovative IT & Engineering Solutions
           </h1>
-          <p className="text-lg md:text-xl text-white mb-8 max-w-xl">
+          <p className="text-lg md:text-xl text-black dark:text-white mb-8 max-w-xl">
             HextaSphere delivers cutting-edge technology solutions to help businesses thrive 
             in today&apos;s digital landscape.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 
               href="/services" 
-              className="px-8 py-3 bg-primary text-white rounded font-semibold hover:bg-opacity-90 transition"
+              className="px-8 py-3 bg-primary text-black dark:text-white rounded font-semibold hover:bg-opacity-90 transition"
             >
               Our Services
             </Link>

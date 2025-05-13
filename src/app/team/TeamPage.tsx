@@ -31,8 +31,8 @@ export default function TeamPage() {
       {/* Team Hero */}
       <section className="relative pt-32 pb-16 bg-primary">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Team</h1>
-          <p className="text-lg text-white max-w-2xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">Our Team</h1>
+          <p className="text-lg text-black dark:text-white max-w-2xl">
             Meet the talented professionals who make HextaSphere&apos;s innovation possible.
           </p>
         </div>
@@ -150,21 +150,21 @@ export default function TeamPage() {
               </p>
               <div className="mt-6 space-y-4">
                 <div className="flex items-start">
-                  <div className="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold">1</div>
+                  <div className="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-black dark:text-white font-bold">1</div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-dark">Collaborative Environment</h3>
                     <p className="text-gray-600">We work together across disciplines, sharing knowledge and perspectives.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold">2</div>
+                  <div className="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-black dark:text-white font-bold">2</div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-dark">Continuous Learning</h3>
                     <p className="text-gray-600">We invest in our team&apos;s growth through education, conferences, and dedicated learning time.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold">3</div>
+                  <div className="w-10 h-10 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-black dark:text-white font-bold">3</div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-dark">Innovation Focus</h3>
                     <p className="text-gray-600">We encourage creative thinking and exploration of new technologies and approaches.</p>
@@ -224,8 +224,8 @@ export default function TeamPage() {
       {/* Join Our Team CTA */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Join Our Team</h2>
-          <p className="text-white text-lg max-w-2xl mx-auto mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-6">Join Our Team</h2>
+          <p className="text-black dark:text-white text-lg max-w-2xl mx-auto mb-8">
             We&apos;re always looking for talented individuals who are passionate about technology and innovation. 
             Check out our open positions and become part of our journey.
           </p>

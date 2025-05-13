@@ -96,8 +96,8 @@ export default function ServicesPage() {
       {/* Services Hero */}
       <section className="relative pt-32 pb-16 bg-primary">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h1>
-          <p className="text-lg text-white max-w-2xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">Our Services</h1>
+          <p className="text-lg text-black dark:text-white max-w-2xl">
             HextaSphere delivers comprehensive technology solutions to address complex business challenges.
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function ServicesPage() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-dark bg-opacity-40 flex items-center justify-center">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white">{service.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white">{service.title}</h2>
                   </div>
                 </div>
                 <div className="p-6">
@@ -151,7 +151,7 @@ export default function ServicesPage() {
             </p>
             <Link 
               href="/contact"
-              className="inline-block px-8 py-3 bg-primary text-white rounded font-semibold hover:bg-opacity-90 transition"
+              className="inline-block px-8 py-3 bg-primary text-black dark:text-white rounded font-semibold hover:bg-opacity-90 transition"
             >
               Get in Touch
             </Link>

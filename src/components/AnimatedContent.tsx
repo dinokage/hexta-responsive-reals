@@ -116,7 +116,7 @@ export default function AnimatedContent() {
               onBlur={() => setTimeout(() => setShowSearch(false), 200)}
               className="w-full px-6 py-4 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm focus:border-primary dark:focus:border-primary-light outline-none transition-all duration-300 font-medium"
             />
-            <button className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-primary dark:bg-primary-light text-white rounded-full hover:bg-primary/90 dark:hover:bg-primary-light/90 transition-colors">
+            <button className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-primary dark:bg-primary-light text-black dark:text-white rounded-full hover:bg-primary/90 dark:hover:bg-primary-light/90 transition-colors">
               <Search className="w-5 h-5" />
             </button>
           </div>
@@ -153,7 +153,7 @@ export default function AnimatedContent() {
           <Link href="/">
             <Button 
               size="lg" 
-              className="min-w-[200px] group bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+              className="min-w-[200px] group bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-black dark:text-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Home className="w-5 h-5 mr-2" />
               Take Me Home

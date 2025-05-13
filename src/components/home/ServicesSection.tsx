@@ -40,7 +40,7 @@ export default function ServicesSection() {
               </div>
               
               <div className="p-6">
-                <div className="bg-primary text-white py-2 px-4 inline-block mb-4 rounded">
+                <div className="bg-primary text-black dark:text-white py-2 px-4 inline-block mb-4 rounded">
                   <h3 className="font-semibold">{service.title}</h3>
                 </div>
                 <p className="text-dark mb-4">{service.description}</p>
@@ -58,7 +58,7 @@ export default function ServicesSection() {
         <div className="mt-12 text-center">
           <Link 
             href="/services"
-            className="inline-flex items-center px-6 py-2 bg-primary text-white rounded text-sm"
+            className="inline-flex items-center px-6 py-2 bg-primary text-black dark:text-white rounded text-sm"
           >
             View All
             <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

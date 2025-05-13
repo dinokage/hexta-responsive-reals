@@ -60,8 +60,8 @@ export default function ContactPage() {
       {/* Contact Hero */}
       <section className="relative pt-32 pb-16 bg-primary">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h1>
-          <p className="text-lg text-white max-w-2xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">Contact Us</h1>
+          <p className="text-lg text-black dark:text-white max-w-2xl">
             Have questions or need more information? Get in touch with our team today.
           </p>
         </div>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="px-6 py-3 bg-primary text-white rounded font-semibold hover:bg-opacity-90 transition disabled:opacity-70"
+                      className="px-6 py-3 bg-primary text-black dark:text-white rounded font-semibold hover:bg-opacity-90 transition disabled:opacity-70"
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
