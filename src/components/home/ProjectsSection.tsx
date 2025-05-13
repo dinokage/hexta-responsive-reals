@@ -1,6 +1,7 @@
 import Link from 'next/link'
 // import Image from 'next/image'
 import ProjectCard from '@/components/projects/ProjectCard'
+import { getProjectImageUrl } from '@/lib/minio'
 
 // Featured projects from the Figma file
 const featuredProjects = [
@@ -8,30 +9,30 @@ const featuredProjects = [
     id: 'dms-oil-gas',
     title: 'DMS tailored for Oil & Gas industry',
     description: 'Developed a custom e-commerce platform with advanced features like real-time inventory management and secure payment processing.',
-    image: '/images/projects/dms.png',
+    image: getProjectImageUrl('dms.png'),
     slug: 'dms-oil-gas'
   },
   {
     id: 'blockchain',
     title: 'Blockchain - Smart Contracts',
     description: 'Implemented a blockchain-based voting system for secure and transparent elections, ensuring vote integrity and voter privacy.',
-    image: '/images/projects/blockchain.png',
+    image: getProjectImageUrl('blockchain.png'),
     slug: 'blockchain-smart-contracts'
   },
   {
     id: 'health-app',
     title: 'Health & Fitness App',
     description: 'Created a cross-platform mobile app for tracking workouts, nutrition, and health metrics, integrating with wearable devices.',
-    image: '/images/projects/health-app.png',
+    image: getProjectImageUrl('health.png'),
     slug: 'health-fitness-app'
   },
   {
     id: 'financial-dashboard',
     title: 'Financial Dashboard',
     description: 'Built a responsive web application for visualizing complex financial data in real-time with customizable reports and analytics.',
-    image: '/images/projects/financial.png',
+    image: getProjectImageUrl('financial-dashboard.png'),
     slug: 'financial-dashboard'
-  }
+  },
 ]
 
 export default function ProjectsSection() {

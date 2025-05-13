@@ -1,20 +1,21 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { getServiceImageUrl } from '@/lib/minio'
 
 const services = [
   {
     id: 'it-services',
     title: 'IT Services',
     description: 'Comprehensive IT solutions tailored to your business needs, including software development, cloud services, and cybersecurity.',
-    image: '/images/it-services.png',
-    link: '/services#it'
+    image: getServiceImageUrl('it-serv.png'),
+    link: '/services'
   },
   {
     id: 'engineering-services',
     title: 'Engineering Services',
     description: 'Innovative engineering solutions for complex challenges, including system design, automation, and industrial IoT applications.',
-    image: '/images/engg-services.png',
-    link: '/services#engineering'
+    image: getServiceImageUrl('engg-serv.png'),
+    link: '/services'
   }
 ]
 
