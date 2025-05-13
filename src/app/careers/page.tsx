@@ -298,7 +298,7 @@ export default function CareersPage() {
           </p>
           <a 
             href="mailto:career@hextasphere.com" 
-            className="inline-block px-8 py-3 bg-white text-primary rounded font-semibold hover:bg-gray-100 transition"
+            className="inline-block px-8 py-3 bg-white text-primary rounded font-semibold hover:bg-gray-100 hover:text-black transition"
           >
             Send Your Resume
           </a>

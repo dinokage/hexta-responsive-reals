@@ -2,6 +2,18 @@
 
 import { useState } from 'react'
 import { MapPin, Phone, Mail } from 'lucide-react'
+import dynamic from 'next/dynamic'
+import { Skeleton } from '@heroui/react'
+
+// Dynamically import the GoogleMap component to prevent SSR issues
+const GoogleMapComponent = dynamic(() => import('@/components/GoogleMapComponent'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full p-4">
+      <Skeleton className="w-full h-full rounded-lg" />
+    </div>
+  ),
+})
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -239,10 +251,8 @@ export default function ContactPage() {
       <section className="mb-16">
         <div className="container mx-auto px-4">
           <div className="rounded-lg overflow-hidden h-96">
-            {/* In a real app, you'd integrate Google Maps or another mapping service */}
-            <div className="w-full h-full bg-light flex items-center justify-center">
-              <p className="text-gray-500">Interactive map would be displayed here</p>
-            </div>
+            {/* Replaced Suspense with HeroUI Skeleton loader */}
+            <GoogleMapComponent />
           </div>
         </div>
       </section>
