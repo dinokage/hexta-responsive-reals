@@ -58,7 +58,7 @@ const Workflow = () => {
         style={{ opacity, scale }}
         className="mb-8 text-center relative z-10"
       >
-        <h2 className="mx-auto max-w-[400px] font-bold text-3xl md:text-4xl leading-tight dark:text-black dark:text-white text-gray-900">
+        <h2 className="mx-auto max-w-[400px] font-bold text-3xl md:text-4xl leading-tight dark:text-white text-gray-900">
           Experience the best workflow with us
         </h2>
       </motion.div>

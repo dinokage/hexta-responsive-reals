@@ -60,7 +60,7 @@ export default function RootLayout({
       <body className={`${jakartaSans.variable} ${cabinetGrotesk.variable} font-sans`}>
         <PostHogProvider>
           <HeroUIProvider>
-            <ThemeProvider attribute="class">
+            <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
               <LenisProvider>
                 <NextTopLoader color="#007BFF" showSpinner={false} initialPosition={0.2} />
                 <Navbar />

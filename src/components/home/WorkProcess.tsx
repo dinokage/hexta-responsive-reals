@@ -89,13 +89,13 @@ export default function WorkProcess() {
 
                 {/* Content Wrapper */}
                 <div className="w-full -mt-1">
-                  <h3 className="text-lg md:text-xl lg:text-2xl text-black dark:text-white 
+                  <h3 className="text-lg md:text-xl lg:text-2xl text-white 
                                leading-normal md:leading-snug lg:leading-snug
                                mb-2 md:mb-3 pr-0 lg:pr-2
                                font-semibold">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-black dark:text-white/75 font-normal 
+                  <p className="text-sm text-white/75 font-normal 
                               leading-[1.85] md:leading-[1.9] lg:leading-[2]
                               pr-0 lg:pr-5">
                     {item.text}
