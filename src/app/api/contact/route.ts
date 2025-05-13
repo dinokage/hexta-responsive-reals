@@ -52,7 +52,7 @@ async function handler(req: NextRequest) {
             // Send mail with defined transport object
             const info = await transporter.sendMail({
                 from: email, // sender address
-                to: '22051558@kiit.ac.in', // list of receivers
+                to: 'info@hextasphere.com', // list of receivers
                 subject: `New inquiry from ${name} - ${subject}`, // Subject line
                 text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`, // plain text body
             });
