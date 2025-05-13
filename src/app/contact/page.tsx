@@ -27,17 +27,24 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitError('')
+
+    const formData = new FormData(e.target as HTMLFormElement)
     
     try {
       // In a real app, you would send this data to your API
-      // await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // })
-      
+      fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // await new Promise(resolve => setTimeout(resolve, 1000))
       
       setSubmitSuccess(true)
       setFormData({
