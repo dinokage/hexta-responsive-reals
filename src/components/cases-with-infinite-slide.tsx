@@ -221,7 +221,7 @@ function Case() {
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
               {clientCategories.map((client, clientIndex) => (
-                <CarouselItem className="basis-1/4 lg:basis-1/6" key={clientIndex}>
+                <CarouselItem className="basis-1/2 lg:basis-1/6" key={clientIndex}>
                   <div
                     key={clientIndex}
                     className="flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 h-32"
