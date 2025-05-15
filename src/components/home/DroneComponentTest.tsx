@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils"
 import Image from "next/image"
 
 export default function DroneTest() {
@@ -17,7 +18,7 @@ export default function DroneTest() {
           src="/images/drone.png"
           width={1583}
           height={554}
-          className="animate-hover"
+          className={cn("animate-hover")}
         />
       </div>
       <div className="relative z-20 mb-20 p-8 sm:p-14 lg:p-24">

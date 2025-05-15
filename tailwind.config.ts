@@ -15,7 +15,8 @@ const config: Config = {
   		animation: {
   			shimmer: 'shimmer 2s linear infinite',
   			'shiny-text': 'shiny-text 8s infinite',
-  			'text-gradient': 'textGradient 3s linear infinite'
+  			'text-gradient': 'textGradient 3s linear infinite',
+			'hover': 'hover 4s cubic-bezier(0.45, 0, 0.55, 1) infinite;' 
   		},
   		keyframes: {
   			shimmer: {

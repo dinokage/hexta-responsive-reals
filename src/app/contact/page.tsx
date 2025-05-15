@@ -154,7 +154,7 @@ export default function ContactPage() {
                       </div>
                     )}
                     
-                    <div className="grid md:grid-cols-2 gap-4 mb-4">
+                    <div className="grid md:grid-cols-2 gap-4 mb-4 ">
                       <div>
                         <label htmlFor="name" className="block text-dark mb-2">
                           Full Name <span className="text-red-500">*</span>
