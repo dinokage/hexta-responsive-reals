@@ -1,3 +1,4 @@
+import * as motion  from 'motion/react-client'
 import BlurImage from '../blur-image'
 import Link from 'next/link'
 
@@ -15,8 +16,8 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="bg-light rounded-md overflow-hidden shadow-sm">
-      <div className="relative h-60">
+    <motion.div initial={{scale: 0}} animate={{scale:1}} whileHover={{scale: 1.1}} className="bg-[#F4F4F4] dark:bg-[#1E1E1E] rounded-md overflow-hidden shadow-sm">
+      <div className="relative h-60 mt-12">
         <BlurImage
           src={project.image}
           alt={project.title}
@@ -40,6 +41,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           Read More..
         </Link>
       </div>
-    </div>
+    </motion.div>
   )
 }
