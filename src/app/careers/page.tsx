@@ -1,7 +1,9 @@
 'use client'
 
+import BlurImage from '@/components/blur-image'
+import { getCareerImageUrl } from '@/lib/minio'
 // import { useState } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 // import Link from 'next/link'
 // import { ChevronDown, ChevronUp, MapPin, Clock, Tag } from 'lucide-react'
 
@@ -92,32 +94,32 @@ export default function CareersPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="relative h-64 rounded-md overflow-hidden">
-                <Image
-                  src="/images/careers/team-1.jpg"
+                <BlurImage
+                  src={getCareerImageUrl("hexta-office.webp")}
                   alt="HextaSphere team collaboration"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-64 rounded-md overflow-hidden">
-                <Image
-                  src="/images/careers/team-2.jpg"
+                <BlurImage
+                  src={getCareerImageUrl("big-3-hexta.webp")}
                   alt="HextaSphere workspace"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-64 rounded-md overflow-hidden">
-                <Image
-                  src="/images/careers/team-3.jpg"
+                <BlurImage
+                  src={getCareerImageUrl("hexta-x-mm.jpg")}
                   alt="HextaSphere team event"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-64 rounded-md overflow-hidden">
-                <Image
-                  src="/images/careers/team-4.jpg"
+                <BlurImage
+                  src={getCareerImageUrl("divya-hexta.jpg")}
                   alt="HextaSphere office environment"
                   fill
                   className="object-cover"

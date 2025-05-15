@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --primary: #217496;
   --dark: #1e1e1e;
@@ -65,6 +66,7 @@
 :root {
   --font-body: var(--font-jakarta-sans), system-ui, sans-serif;
   --font-heading: var(--font-cabinet-grotesk), system-ui, sans-serif;
+  --animate-hover: hover 4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 html,
@@ -86,6 +88,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+.animate-hover {
+  animation: var(--animate-hover) /* hover 4s cubic-bezier(0.45, 0, 0.55, 1) infinite */;
 }
 
 .prose {

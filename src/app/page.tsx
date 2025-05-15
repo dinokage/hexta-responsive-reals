@@ -5,6 +5,7 @@ import WorkProcess from '@/components/home/WorkProcess'
 import ProjectsSection from '@/components/home/ProjectsSection'
 import ClientsSection from '@/components/home/ClientsSection'
 import { HeroSectionOne } from '@/components/home/HeroTest'
+import DroneTest from '@/components/home/DroneComponentTest'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       {/* <HeroSection /> */}
       <Workflow />
       <WorkProcess />
+      <DroneTest />
       <ServicesSection />
       <ProjectsSection />
       <ClientsSection />
