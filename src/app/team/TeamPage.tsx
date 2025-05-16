@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import BlurImage from '@/components/blur-image'
-import { itDivisionTeam, engineeringDivisionTeam } from '@/lib/team'
+// import { itDivisionTeam, engineeringDivisionTeam } from '@/lib/team'
 import { Skeleton } from "@heroui/react"
 import { getCareerImageUrl } from '@/lib/minio'
-import { TeamMember } from '@/types/team'
+// import { TeamMember } from '@/types/team'
+import ITGrid from '@/components/ITGrid'
+import EnggGrid from '@/components/EnggGrid'
 
 export const metadata = {
   title: 'Our Team | HextaSphere',
@@ -23,41 +25,6 @@ export default function TeamPage() {
     
     return () => clearTimeout(timer)
   }, [])
-
-  const renderTeamMember = (member: TeamMember, index: number, isLarge: boolean = false) => (
-    <div key={index} className="bg-white dark:bg-[#333333] rounded-lg overflow-hidden shadow-sm flex flex-col items-center p-6">
-      {isLoading ? (
-        <Skeleton className={`rounded-full ${isLarge ? 'w-48 h-48' : 'w-32 h-32'} mb-4`} />
-      ) : (
-        <div className={`relative ${isLarge ? 'w-48 h-48' : 'w-32 h-32'} mb-4 rounded-full overflow-hidden`}>
-          <BlurImage
-            src={member.image}
-            alt={member.name}
-            fill
-            className="object-cover rounded-full"
-          />
-        </div>
-      )}
-      
-      <div className="text-center w-full">
-        {isLoading ? (
-          <>
-            <Skeleton className={`h-${isLarge ? '6' : '5'} w-3/4 mx-auto mb-2`} />
-            <Skeleton className="h-4 w-1/2 mx-auto mb-3" />
-            <Skeleton className="h-4 w-full mx-auto mb-1" />
-            <Skeleton className="h-4 w-full mx-auto mb-1" />
-            <Skeleton className="h-4 w-4/5 mx-auto" />
-          </>
-        ) : (
-          <>
-            <h3 className={`${isLarge ? 'text-xl' : 'text-lg'} font-semibold text-dark`}>{member.name}</h3>
-            <p className="text-primary font-medium mb-3">{member.role}</p>
-            <p className={`text-dark ${isLarge ? 'text-base' : 'text-sm'}`}>{member.bio}</p>
-          </>
-        )}
-      </div>
-    </div>
-  )
 
   return (
     <>
@@ -81,8 +48,9 @@ export default function TeamPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {itDivisionTeam.map((member, index) => renderTeamMember(member, index, false))}
+          <div>
+            {/* {itDivisionTeam.map((member, index) => renderTeamMember(member, index, false))} */}
+            <ITGrid />
           </div>
         </div>
       </section>
@@ -97,8 +65,8 @@ export default function TeamPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {engineeringDivisionTeam.map((member, index) => renderTeamMember(member, index, false))}
+          <div>
+            <EnggGrid />
           </div>
         </div>
       </section>

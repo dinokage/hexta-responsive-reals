@@ -1,48 +1,66 @@
-import nextPWA from 'next-pwa';
+import withMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeSlug from 'rehype-slug'
 
-const withPWA = nextPWA({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
-  fallbacks: {
-    document: '/offline',
-  },
-});
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enable App Router
+  experimental: {
+    mdxRs: true,
+  },
+  // Configure MDX file extensions
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
       },
       {
         protocol: 'https',
         hostname: 's3.rdpdatacenter.in',
         pathname: '/**',
       },
+      {
+        protocol: "http",
+        hostname: "192.168.69.87",
+        port: "9000",
+      },
+      {
+        protocol: "https",
+        hostname: "s3.amazonaws.com",
+      },
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: '/ingest/static/:path*',
-        destination: 'https://eu-assets.i.posthog.com/static/:path*',
-      },
-      {
-        source: '/ingest/:path*',
-        destination: 'https://eu.i.posthog.com/:path*',
-      },
-      {
-        source: '/ingest/decide',
-        destination: 'https://eu.i.posthog.com/decide',
-      },
-    ];
-  },
-  // This is required to support PostHog trailing slash API requests
-  skipTrailingSlashRedirect: true,
-};
+}
 
-export default withPWA(nextConfig);
+const withMDXConfig = withMDX({
+  // Configure MDX plugins here
+  options: {
+    remarkPlugins: [
+      remarkGfm, // GitHub Flavored Markdown support
+    ],
+    rehypePlugins: [
+      rehypeSlug, // Add ids to headings
+      rehypeHighlight, // Syntax highlighting for code blocks
+    ],
+    // If you use `MDXProvider`, uncomment the following line.
+    // providerImportSource: "@mdx-js/react",
+  },
+})
+
+export default withMDXConfig(nextConfig)
