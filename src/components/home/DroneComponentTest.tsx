@@ -26,7 +26,7 @@ export default function DroneTest() {
           <blockquote className="relative max-w-2xl text-xl leading-relaxed tracking-tight text-gray-900 md:text-2xl lg:text-3xl">
             <p className="before:absolute before:top-0 before:right-full before:content-['“'] after:text-gray-900/70 after:content-['”']">
               <strong className="font-semibold">
-              Experience precision like never before
+              Experience precision like never before.
               </strong>{" "}
               <span className="text-gray-900/70">
               Our drone solutions offer high-resolution inspections, real-time monitoring, and safer site evaluations—designed to elevate your engineering and environmental insights.
