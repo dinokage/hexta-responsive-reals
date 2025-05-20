@@ -199,3 +199,60 @@ h1, h2, h3, h4, h5, h6 {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.15); opacity: 0.9; }
 }
+
+pre code {
+  @apply text-gray-800 dark:text-gray-100;
+}
+
+/* Highlight.js theme overrides for dark mode */
+.dark .hljs-comment,
+.dark .hljs-quote {
+  @apply text-gray-400;
+}
+
+.dark .hljs-variable,
+.dark .hljs-template-variable,
+.dark .hljs-attribute,
+.dark .hljs-tag,
+.dark .hljs-name,
+.dark .hljs-regexp,
+.dark .hljs-link,
+.dark .hljs-name,
+.dark .hljs-selector-id,
+.dark .hljs-selector-class {
+  @apply text-red-300;
+}
+
+.dark .hljs-number,
+.dark .hljs-meta,
+.dark .hljs-built_in,
+.dark .hljs-builtin-name,
+.dark .hljs-literal,
+.dark .hljs-type,
+.dark .hljs-params {
+  @apply text-orange-300;
+}
+
+.dark .hljs-string,
+.dark .hljs-symbol,
+.dark .hljs-bullet {
+  @apply text-green-300;
+}
+
+.dark .hljs-title,
+.dark .hljs-section {
+  @apply text-yellow-300;
+}
+
+.dark .hljs-keyword,
+.dark .hljs-selector-tag {
+  @apply text-purple-300;
+}
+
+.dark .hljs-emphasis {
+  font-style: italic;
+}
+
+.dark .hljs-strong {
+  font-weight: bold;
+}

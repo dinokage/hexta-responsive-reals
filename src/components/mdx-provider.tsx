@@ -59,7 +59,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    
+
     // Paragraph styling
     p: ({ className, ...props }) => (
       <p
@@ -67,7 +67,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    
+
     // List styling
     ul: ({ className, ...props }) => (
       <ul className={cn("my-4 ml-6 list-disc", className)} {...props} />
@@ -78,7 +78,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     li: ({ className, ...props }) => (
       <li className={cn("leading-7 mb-2", className)} {...props} />
     ),
-    
+
     // Blockquote styling
     blockquote: ({ className, ...props }) => (
       <blockquote
@@ -89,12 +89,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    
+
     // Code styling
+
     code: ({ className, ...props }) => (
       <code
         className={cn(
-          "relative rounded bg-gray-100 px-2 py-1 font-mono text-sm text-dark",
+          "relative rounded bg-gray-100 dark:bg-gray-800 px-2 py-1 font-mono text-sm text-gray-800 dark:text-gray-100",
           className
         )}
         {...props}
@@ -103,13 +104,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     pre: ({ className, ...props }) => (
       <pre
         className={cn(
-          "mb-4 mt-6 overflow-x-auto rounded-lg bg-gray-950 p-4",
+          "mb-4 mt-6 overflow-x-auto rounded-lg bg-gray-100 dark:bg-gray-950 p-4 text-gray-800 dark:text-gray-100",
           className
         )}
         {...props}
       />
     ),
-    
+
     // Table styling
     table: ({ className, ...props }) => (
       <div className="my-6 w-full overflow-y-auto">
@@ -131,7 +132,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    
+
     // Custom image component using standard img tag for MDX
     img: ({ src, alt, className, ...props }) => (
       <div className="my-6 overflow-hidden rounded-lg">
@@ -144,12 +145,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         />
       </div>
     ),
-    
+
     // Horizontal rule
     hr: ({ ...props }) => (
       <hr className="my-8 border-0 border-t border-gray-200" {...props} />
     ),
-    
+
     // Link styling
     a: ({ className, ...props }) => (
       <a
@@ -160,7 +161,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    
+
     // Strong and emphasis
     strong: ({ className, ...props }) => (
       <strong className={cn("font-semibold", className)} {...props} />
@@ -168,7 +169,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     em: ({ className, ...props }) => (
       <em className={cn("italic", className)} {...props} />
     ),
-    
+
     // Override any default components with custom ones
     ...components,
   }
