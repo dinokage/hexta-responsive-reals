@@ -95,7 +95,6 @@ const categories = [
 ]
 
 export default function ProjectsPage() {
-  const featuredProjects = projects.filter(project => project.featured)
   const otherProjects = projects.filter(project => !project.featured)
 
   return (
