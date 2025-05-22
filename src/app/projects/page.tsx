@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import BlurImage from '@/components/blur-image'
 import { getProjectImageUrl } from '@/lib/minio'
+import { ExpandableCards } from '@/components/projects/ExpandableCards'
 
 export const metadata = {
   title: 'Our Projects | HextaSphere',
@@ -122,63 +123,7 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {featuredProjects.map((project) => (
-              <article key={project.id} className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="relative h-64 md:h-80 overflow-hidden">
-                  <BlurImage
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 text-sm font-medium text-white bg-primary rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-                    <time>{new Date(project.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}</time>
-                    <span className="mx-2">•</span>
-                    <span>{project.readTime} read</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-dark mb-4 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 dark:text-gray-300 dark:bg-gray-700 rounded-full"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                  {project.blogUrl && (
-                    <Link 
-                      href={project.blogUrl}
-                      className="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors"
-                    >
-                      Read Full Case Study
-                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
+          <ExpandableCards />
         </div>
       </section>
 

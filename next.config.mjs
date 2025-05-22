@@ -36,6 +36,11 @@ const nextConfig = {
         pathname: '/**',
       },
       {
+        protocol: 'https',
+        hostname: 'assets.aceternity.com',
+        pathname: '/demos/**',
+      },
+      {
         protocol: "http",
         hostname: "192.168.69.87",
         port: "9000",
