@@ -1,4 +1,4 @@
-const baseURL = "https://cdn.hextasphere.com/hexta/"
+const baseURL = "https://cdn.rdpdatacenter.in/hexta/"
 
 export const getProjectImageUrl = (filename: string) => {
   const prefix = `projects/${filename}`;

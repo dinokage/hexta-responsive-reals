@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "HextaSphere provides specialized IT and Engineering services.",
       images: [
       {
-        url: "https://cdn.hextasphere.com/og.png",
+        url: "https://cdn.rdpdatacenter.in/og.png",
         width: 1200,
         height: 630,
         alt: "HextaSphere",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     description:
       "Specialized IT and Engineering services from HextaSphere – Fast, secure, and reliable.",
     images: [
-      "https://cdn.hextasphere.com/og.png",
+      "https://cdn.rdpdatacenter.in/og.png",
     ],
   },
   alternates: {

@@ -80,8 +80,8 @@ export default function AboutPage() {
             >
               {/* Updated to use HLS adaptive streaming */}
               <AdaptiveHLSPlayer
-                src="https://cdn.hextasphere.com/hexta/hls/master.m3u8"
-                poster="https://cdn.hextasphere.com/images/about-us-poster.jpg"
+                src="https://cdn.rdpdatacenter.in/hexta/hls/master.m3u8"
+                poster="https://cdn.rdpdatacenter.in/images/about-us-poster.jpg"
                 autoplay={true}
                 muted={true}
                 loop={true}

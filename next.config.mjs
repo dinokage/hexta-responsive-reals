@@ -41,6 +41,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'cdn.rdpdatacenter.in',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'assets.aceternity.com',
         pathname: '/demos/**',
       },
